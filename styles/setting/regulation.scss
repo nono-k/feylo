@@ -1,0 +1,16 @@
+@use '../mixin';
+
+:root {
+  --green: #53C197;
+  --sky-blue: #9CD5EA;
+  --yellow: #F3E84D;
+  --orange: #F0A15E;
+  --purple: #C9B1DF;
+
+  --black: #141414;
+  --white: #fff;
+  --gray: #EBE7E7;
+
+  --container-size: 1620px;
+  --container-padding: 60px;
+}
