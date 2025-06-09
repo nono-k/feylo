@@ -14,6 +14,10 @@ export default withNuxt(
       'vue/no-multiple-template-root': 'off',
       'vue/require-v-for-key': 'error',
       'vue/no-use-v-if-with-v-for': 'error',
+      'vue/html-self-closing': 'off',
+      'vue/max-attributes-per-line': 'off',
+      'vue/multiline-html-element-content-newline': 'off',
+      'vue/singleline-html-element-content-newline': 'off',
     },
   },
 );
