@@ -18,6 +18,7 @@ export default withNuxt(
       'vue/max-attributes-per-line': 'off',
       'vue/multiline-html-element-content-newline': 'off',
       'vue/singleline-html-element-content-newline': 'off',
+      'no-console': 'off',
     },
   },
 );
