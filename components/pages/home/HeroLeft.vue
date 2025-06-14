@@ -5,7 +5,7 @@
     <div class="hero__left-links">
       <div class="hero__left-links-title ff-zilla-slab-700">Archive</div>
       <div class="hero__left-links-wrap">
-        <a href="/componets" class="hero__left-item">
+        <a href="/components" class="hero__left-item">
           <span class="hero__left-icon">
             <Icon name="lets-icons:materials-light" size="1.85rem" />
           </span>

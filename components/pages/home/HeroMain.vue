@@ -63,6 +63,7 @@ register();
     img {
       height: 100%;
       object-fit: cover;
+      border: 1px solid var(--black);
     }
   }
   &__main-title {
