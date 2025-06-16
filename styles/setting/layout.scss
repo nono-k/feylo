@@ -3,3 +3,19 @@
   margin-inline: auto;
   padding-inline: var(--container-padding);
 }
+
+.fullscreen {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 2rem;
+  }
+  &__item {
+    border-right: 1px solid var(--black);
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    &:nth-child(4n) {
+      border-right: none;
+    }
+  }
+}
