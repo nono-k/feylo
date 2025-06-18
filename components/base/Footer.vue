@@ -10,7 +10,7 @@ import { BlogTags } from '~/data/blogTags';
         <div v-for="n in 2" :key="n" class="footer__keywords-marquee">
           <ul class="footer__keywords-marquee-list">
             <li v-for="tag in BlogTags" :key="tag.name" class="footer__keywords-marquee-item">
-              <NuxtLink :to="`/tag/${tag.slug}`" class="footer__keywords-marquee-link">{{ tag.name }}</NuxtLink>
+              <NuxtLink :to="`/tag/${tag.slug}`" class="footer__keywords-marquee-link">#{{ tag.name }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -21,14 +21,24 @@ import { BlogTags } from '~/data/blogTags';
       <div class="footer__content-wrap">
         <ul class="footer__content-list">
           <li class="footer__content-item">
-            <a href="/js-note" class="footer__content-link" style="background: var(--yellow);">
+            <NuxtLink to="/compoents" class="footer__content-link" style="background: var(--yellow);">
               <span class="footer__content-text">コンポーネントまとめ</span>
-            </a>
+            </NuxtLink>
           </li>
           <li class="footer__content-item">
-            <a href="/js-note" class="footer__content-link" style="background: var(--sky-blue);">
+            <NuxtLink to="/tools" class="footer__content-link" style="background: var(--sky-blue);">
               <span class="footer__content-text">Web制作に役立つツール集</span>
-            </a>
+            </NuxtLink>
+          </li>
+          <li class="footer__content-item">
+            <NuxtLink to="/animation" class="footer__content-link" style="background: var(--orange);">
+              <span class="footer__content-text">Webデザインアニメーション帳</span>
+            </NuxtLink>
+          </li>
+          <li class="footer__content-item">
+            <NuxtLink to="/book" class="footer__content-link" style="background: var(--purple);">
+              <span class="footer__content-text">おすすめ本</span>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -120,6 +130,7 @@ import { BlogTags } from '~/data/blogTags';
     writing-mode: vertical-rl;
     margin-left: 1.5rem;
     margin-top: 1.5rem;
+    font-weight: 700;
   }
   &__bottom {
     padding-block: 2rem;
