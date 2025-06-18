@@ -2,6 +2,7 @@
 const props = defineProps<{
   link: string;
   bgColor?: string;
+  hoverColor?: string;
 }>();
 
 const buttonRef = ref<HTMLElement>();
@@ -32,6 +33,7 @@ const onLeave = () => {
     ref="buttonRef"
     :to="`${link}`"
     class="button ff-open-sans-700"
+    :style="{ '--hover-color': props.hoverColor || 'var(--white)' }"
     @mouseenter="onEnter"
     @mouseleave="onLeave"
   >
@@ -56,7 +58,7 @@ const onLeave = () => {
   transition-property: color;
   transition-duration: 0.3s;
   @include mixin.hover {
-    color: var(--white);
+    color: var(--hover-color);
   }
   &__circle {
     position: absolute;
