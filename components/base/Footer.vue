@@ -21,7 +21,7 @@ import { BlogTags } from '~/data/blogTags';
       <div class="footer__content-wrap">
         <ul class="footer__content-list">
           <li class="footer__content-item">
-            <NuxtLink to="/compoents" class="footer__content-link" style="background: var(--yellow);">
+            <NuxtLink to="/components" class="footer__content-link" style="background: var(--yellow);">
               <span class="footer__content-text">コンポーネントまとめ</span>
             </NuxtLink>
           </li>
