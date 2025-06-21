@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="hero__left-bottom">
-      <a href="" class="hero__left-bottom-link">運営者について</a>
+      <a href="/profile" class="hero__left-bottom-link">運営者について</a>
       <div class="hero__left-bottom-icons">
         <a class="hero__left-bottom-icon" href="https://x.com/kameno_no3" target="_blank">
           <Icon name="pajamas:twitter" size="1.25rem" />

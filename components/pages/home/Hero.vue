@@ -2,7 +2,7 @@
   <div class="hero container">
     <HeroLeft />
     <HeroMain />
-    <div class="hero__right" />
+    <HeroRight />
   </div>
 </template>
 
@@ -13,9 +13,5 @@
   grid-template-columns: 320px 1fr 320px;
   gap: 2.8rem;
   margin-top: 1.5rem;
-  &__right {
-    background: var(--green);
-    height: 560px;
-  }
 }
 </style>
