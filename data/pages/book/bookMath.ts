@@ -1,0 +1,10 @@
+import type { BookType } from './bookType';
+
+export const bookMath: BookType[] = [
+  {
+    name: 'リアルタイムグラフィックスの数学 ― GLSLではじめるシェーダプログラミング',
+    link: '4hKLebE',
+    image: '61CP8Asy52L._SY522_',
+    desc: '本書はリアルタイムグラフィックスの数学を学ぶための書籍です。シェーダプログラミングを学ぶためには、数学の知識が必要です。本書では、数学の基礎からシェーダプログラミングまでを学ぶことができます。',
+  },
+];

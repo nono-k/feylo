@@ -1,8 +1,8 @@
 export const homeArchiveList = [
   {
-    title: '初心者のためのJSネタ帳',
-    link: '/js-note',
-    desc: '初学者向けにJavaScriptの実践的な使い方をまとめてみました。',
+    title: 'コンポーネントまとめ',
+    link: '/components',
+    desc: 'Web制作で汎用的に使えるコンポーネントをまとめてみました。',
   },
   {
     title: 'Web制作に役立つツール集',
@@ -12,7 +12,7 @@ export const homeArchiveList = [
   {
     title: 'Webデザインアニメーション帳',
     link: '/animation',
-    desc: 'css,JSを使ってリッチな表現になるアニメーションをまとめてみました。',
+    desc: 'CSS,JSを使ってリッチな表現になるアニメーションをまとめてみました。',
   },
   {
     title: 'おすすめ本',
