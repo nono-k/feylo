@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute();
-
 const { blog } = await useBlogContent(route.path);
 
 const breadcrumbItems = [
