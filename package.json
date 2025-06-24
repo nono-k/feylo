@@ -16,6 +16,7 @@
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.13.0",
     "nuxt": "^3.17.5",
+    "nuxt-marquee": "^1.0.4",
     "overlayscrollbars": "^2.11.4",
     "rehype-external-links": "^3.0.0",
     "rehype-raw": "^7.0.0",
