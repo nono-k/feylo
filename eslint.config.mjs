@@ -19,6 +19,7 @@ export default withNuxt(
       'vue/multiline-html-element-content-newline': 'off',
       'vue/singleline-html-element-content-newline': 'off',
       'no-console': 'off',
+      'vue/no-v-html': 'off',
     },
   },
 );
