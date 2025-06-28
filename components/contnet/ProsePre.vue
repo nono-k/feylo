@@ -76,36 +76,38 @@ const copyCode = (): void => {
 .pre {
   overflow-x: hidden;
   border-radius: 0.25rem;
-  background-color: #25292f;
+  background-color: var(--code-bg);
   font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
   font-size: 0.90625rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .pre-head {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  background-color: var(--color-gray-700);
   box-shadow: 0 5px 3px -4px rgba(0,0,0,.9);
+  height: 2.5rem;
 }
 
 .pre-head .filename {
   color: var(--white);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: #15181e;
   font-size: 0.8rem;
   font-weight: 600;
+  margin-right: auto;
 }
 
 .pre-head .copy-success,
 .pre-head .copy-btn {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--white);
-  padding: 0.25em 0.75em;
+  padding: 0.35rem 0.75rem;
   border-radius: 4px;
   border: 1px solid var(--white);
   margin-right: 0.5rem;
+  line-height: 1;
 }
 
 .pre-head .copy-success {
@@ -150,7 +152,7 @@ const copyCode = (): void => {
   background-color: color-mix(in srgb, var(--shiki-default-bg) 75%, #10b981);
 }
 
-pre code .line {
+/* pre code .line {
   display: block;
-}
+} */
 </style>
