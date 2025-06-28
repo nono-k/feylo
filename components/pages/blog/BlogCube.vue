@@ -2,10 +2,64 @@
 defineProps<{
   image: string;
 }>();
+
+const cubeRef = ref<HTMLElement | null>(null);
+const rotation = ref({ x: -20, y: 20 });
+
+const isDragging = ref(false);
+let startX = 0;
+let startY = 0;
+
+const onMouseDown = (event: MouseEvent) => {
+  isDragging.value = true;
+  startX = event.clientX;
+  startY = event.clientY;
+};
+
+const onMouseMove = (event: MouseEvent) => {
+  if (!isDragging.value) return;
+
+  const deltaX = event.clientX - startX;
+  const deltaY = event.clientY - startY;
+  startX = event.clientX;
+  startY = event.clientY;
+
+  rotation.value.y += deltaX * 0.5;
+  rotation.value.x += deltaY * 0.2;
+
+  updateTransform();
+};
+
+const onMouseUp = () => {
+  isDragging.value = false;
+};
+
+const updateTransform = () => {
+  if (cubeRef.value) {
+    cubeRef.value.style.transform = `
+      rotateX(-${rotation.value.x}deg)
+      rotateY(${rotation.value.y}deg)
+    `;
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('mousemove', onMouseMove);
+  window.addEventListener('mouseup', onMouseUp);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('mousemove', onMouseMove);
+  window.removeEventListener('mouseup', onMouseUp);
+});
 </script>
 
 <template>
-  <div class="cube">
+  <div
+    ref="cubeRef"
+    class="cube"
+    @mousedown="onMouseDown"
+  >
     <div class="face front" :style="{ backgroundImage: `url(${image})` }"></div>
     <div class="face back" :style="{ backgroundImage: `url(${image})` }"></div>
     <div class="face right" :style="{ backgroundImage: `url(${image})` }"></div>
@@ -27,6 +81,7 @@ defineProps<{
   translate: 0% -50%;
   transform: rotateX(4deg) rotateY(-12deg) rotateZ(15deg);
   transform-style: preserve-3d;
+  cursor: grab;
   // animation: rotate 20s linear infinite;
 }
 .face {
