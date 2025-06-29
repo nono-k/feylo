@@ -23,6 +23,7 @@ img {
   height: auto;
   object-fit: cover;
   vertical-align: bottom;
+  user-select: none;
 }
 
 h1,
@@ -69,4 +70,9 @@ summary::-webkit-details-marker {
 
 summary {
   display: block;
+}
+
+// Nuxt-Marquee用
+.vfm-marquee-container {
+  overflow: hidden;
 }
