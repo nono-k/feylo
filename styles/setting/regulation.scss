@@ -19,3 +19,9 @@
   --container-size: 1620px;
   --container-padding: 60px;
 }
+
+@include mixin.mobile {
+  :root {
+    --container-padding: 15px;
+  }
+}

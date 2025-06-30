@@ -1,3 +1,5 @@
+@use '../mixin';
+
 .container {
   max-width: var(--container-size);
   margin-inline: auto;
@@ -9,6 +11,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 2rem;
+    @include mixin.mobile {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 0;
+    }
   }
   &__item {
     border-right: 1px solid var(--black);
@@ -16,6 +22,11 @@
     border-bottom: 1px solid var(--black);
     &:nth-child(4n) {
       border-right: none;
+    }
+    @include mixin.mobile {
+      &:nth-child(n + 3) {
+        border-top: none;
+      }
     }
   }
 }
