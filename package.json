@@ -16,6 +16,7 @@
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.13.0",
     "@nuxtjs/cloudinary": "^4.0.0",
+    "dayjs": "^1.11.13",
     "nuxt": "^3.17.5",
     "nuxt-marquee": "^1.0.4",
     "overlayscrollbars": "^2.11.4",
