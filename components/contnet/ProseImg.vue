@@ -17,12 +17,20 @@ const props = defineProps({
     default: '',
   },
 });
+
+const config = useRuntimeConfig();
+const cloudName = config.public.cloudinary.cloudName;
+
+const isStringSrc = typeof props.src === 'string';
+const isCloudinaryImage = isStringSrc && props.src.startsWith(`https://res.cloudinary.com/${cloudName}/image/`);
+const isCloudinaryVideo = isStringSrc && props.src.startsWith(`https://res.cloudinary.com/${cloudName}/video/`);
 </script>
 
 <template>
   <figure class="figure">
     <div class="figure__img">
-      <img
+      <component
+        :is="isCloudinaryVideo ? 'CldVideoPlayer' : isCloudinaryImage ? 'CldImage' : 'img'"
         :src="props.src"
         :alt="props.alt"
         :width="props.width"
