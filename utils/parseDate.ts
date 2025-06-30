@@ -1,23 +1,18 @@
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export const parseDate = (date: Date) => {
-  const dateObj = new Date(date);
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const day = String(dateObj.getDate()).padStart(2, '0');
-  return `${year}.${month}.${day}`;
+  return dayjs(date).tz('Asia/Tokyo').format('YYYY.MM.DD');
 };
 
 export const parseDateSlash = (date: Date) => {
-  const dateObj = new Date(date);
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const day = String(dateObj.getDate()).padStart(2, '0');
-  return `${year}/${month}/${day}`;
+  return dayjs(date).tz('Asia/Tokyo').format('YYYY/MM/DD');
 };
 
 export const parseDateTime = (date: Date) => {
-  const dateObj = new Date(date);
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const day = String(dateObj.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
+  return dayjs(date).tz('Asia/Tokyo').format('YYYY-MM-DD');
 };
