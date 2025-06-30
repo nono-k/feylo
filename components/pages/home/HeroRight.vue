@@ -57,6 +57,9 @@ register();
     position: relative;
     display: flex;
     flex-direction: column;
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
   &__right-title {
     font-size: 1.5rem;

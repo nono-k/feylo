@@ -51,15 +51,25 @@ register();
   &__main {
     display: flex;
     flex-direction: column;
+    @include mixin.phone {
+      row-gap: 1.25rem;
+    }
   }
   &__main-swiper {
     height: 530px;
+    @include mixin.phone {
+      height: 380px;
+    }
   }
   &__main-slide {
     width: 100% !important;
   }
   &__main-img {
     height: 490px;
+    position: relative;
+    @include mixin.phone {
+      height: auto;
+    }
     img {
       height: 100%;
       object-fit: cover;
@@ -79,6 +89,9 @@ register();
         }
       }
     }
+    @include mixin.phone {
+      left: 0.5rem;
+    }
   }
   &__main-title-char {
     display: inline-block;
@@ -86,6 +99,9 @@ register();
     padding: 0.25rem 0.75rem;
     border-radius: 0.75rem;
     font-size: 1.15rem;
+    @include mixin.mobile {
+      font-size: 1rem;
+    }
   }
   &__main-bottom {
     margin-top: auto;

@@ -5,7 +5,7 @@
     <div class="hero__left-links">
       <div class="hero__left-links-title ff-zilla-slab-700">Archive</div>
       <div class="hero__left-links-wrap">
-        <a href="/components" class="hero__left-item">
+        <a href="/components" class="hero__left-item" style="--bg-color: var(--yellow)">
           <span class="hero__left-icon">
             <Icon name="lets-icons:materials-light" size="1.85rem" />
           </span>
@@ -14,7 +14,7 @@
             <span class="hero__left-item-en ff-zilla-slab-700">Components</span>
           </span>
         </a>
-        <a href="/tool" class="hero__left-item">
+        <!-- <a href="/tool" class="hero__left-item" style="--bg-color: var(--sky-blue)">
           <span class="hero__left-icon">
             <Icon name="iconoir:frame-tool" size="1.85rem" />
           </span>
@@ -22,8 +22,8 @@
             <span class="hero__left-item-text">ツール</span>
             <span class="hero__left-item-en ff-zilla-slab-700">Tools</span>
           </span>
-        </a>
-        <a href="/animation" class="hero__left-item">
+        </a> -->
+        <a href="/animation" class="hero__left-item" style="--bg-color: var(--orange)">
           <span class="hero__left-icon">
             <Icon name="material-symbols-light:animation" size="1.85rem" />
           </span>
@@ -32,7 +32,7 @@
             <span class="hero__left-item-en ff-zilla-slab-700">Animation</span>
           </span>
         </a>
-        <a href="/book" class="hero__left-item">
+        <a href="/book" class="hero__left-item" style="--bg-color: var(--purple)">
           <span class="hero__left-icon">
             <Icon name="material-symbols-light:menu-book-outline" size="1.85rem" />
           </span>
@@ -42,6 +42,12 @@
           </span>
         </a>
       </div>
+    </div>
+    <div class="hero__left-middle">
+      <div class="hero__left-middle-title ff-zen-kaku-gothic-700">運用中のサイト🚀</div>
+      <a href="https://hypb.dev" class="hero__left-middle-img" target="_blank">
+        <img src="/images/common/hypb.png" alt="hypb" />
+      </a>
     </div>
     <div class="hero__left-bottom">
       <a href="/profile" class="hero__left-bottom-link">運営者について</a>
@@ -67,6 +73,12 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--black);
+    @include mixin.mobile {
+      padding-block: 1rem;
+    }
+    @include mixin.phone {
+      display: none;
+    }
   }
   &__left-title {
     font-size: 0.95rem;
@@ -75,6 +87,10 @@
     margin-bottom: 1.5rem;
     background: var(--black);
     color: var(--white);
+    padding-block: 0.25rem;
+    @include mixin.mobile {
+      font-size: 0.75rem;
+    }
   }
   &__left-links {
     border-top: 1px solid var(--black);
@@ -93,6 +109,10 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 0.5rem;
     row-gap: 1.5rem;
+    @include mixin.mobile {
+      grid-template-columns: 1fr;
+      row-gap: 0.75rem;
+    }
   }
   &__left-item {
     display: grid;
@@ -104,18 +124,10 @@
     background: var(--yellow);
     box-shadow: 2px 2px 0 var(--black);
     border: 1px solid var(--black);
+    background: var(--bg-color);
     @include mixin.hover {
       translate: 2px 2px;
       box-shadow: none;
-    }
-    &:nth-child(2) {
-      background: var(--sky-blue);
-    }
-    &:nth-child(3) {
-      background: var(--orange);
-    }
-    &:nth-child(4) {
-      background: var(--purple);
     }
   }
   &__left-item-text-wrap {
@@ -129,6 +141,20 @@
   }
   &__left-item-en {
     font-size: 0.75rem;
+  }
+  &__left-middle-title {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  &__left-middle-img {
+    margin-top: 0.5rem;
+    margin-inline: 2rem;
+    display: block;
+    border: 2px solid var(--white);
+    transition: border-color 0.3s;
+    @include mixin.hover {
+      border-color: var(--yellow);
+    }
   }
   &__left-bottom {
     margin-top: auto;
