@@ -70,6 +70,9 @@ const onMouseLeave = () => {
   transition-property: clip-path;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  @include mixin.phone {
+    height: 400px;
+  }
   &.is-visible {
     clip-path: inset(0);
   }
@@ -94,6 +97,14 @@ const onMouseLeave = () => {
     height: 460px;
     text-align: center;
     position: relative;
+    @media (max-width: 1200px) {
+      width: calc(100% - 5rem);
+    }
+    @include mixin.phone {
+      width: calc(100% - 2rem);
+      height: auto;
+      padding: 2.5rem 1rem;
+    }
   }
   &__sub {
     font-size: 1.2rem;
@@ -114,9 +125,20 @@ const onMouseLeave = () => {
     font-size: 10rem;
     text-transform: uppercase;
     margin-top: 1rem;
+    @include mixin.mobile {
+      font-size: 6rem;
+    }
+    @include mixin.phone {
+      font-size: 3.875rem;
+      margin-top: 0.5rem;
+    }
   }
   &__text {
     margin-top: 1.5rem;
+    @include mixin.phone {
+      font-size: 0.875rem;
+      letter-spacing: 0;
+    }
   }
   &__mouse-follower {
     position: absolute;
@@ -132,6 +154,9 @@ const onMouseLeave = () => {
     pointer-events: none;
     scale: 0;
     transition: scale 0.6s;
+    @include mixin.phone {
+      display: none;
+    }
   }
 }
 </style>
