@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { AnimationCategoryKey } from '~/data/pages/animation/animationData';
 import { animationData } from '~/data/pages/animation/animationData';
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 
 const route = useRoute();
 
@@ -17,6 +20,14 @@ const breadcrumbItems = [
   { path: `/animation/${category}/${group}`, label: `${groupTitle}` },
   { path: `/animation/${route.path}`, label: `${data.value?.title}` },
 ];
+
+useSeoMeta({
+  title: `${data.value?.title} | ${siteTitle}`,
+  ogTitle: `${data.value?.title} | ${siteTitle}`,
+  description: `${data.value?.description}`,
+  ogDescription: `${data.value?.description}`,
+  ogImage: `${data.value?.image}`,
+});
 </script>
 
 <template>
@@ -24,13 +35,12 @@ const breadcrumbItems = [
     <Breadcrumb :items="breadcrumbItems" />
 
     <div class="article container">
-      <div v-if="data.demoUrl" class="article__iframe">
-        <iframe
-          :src="data.demoUrl"
-          frameborder="0"
-          class="article__iframe"
-        />
-      </div>
+      <iframe
+        v-if="data.demoUrl"
+        :src="data.demoUrl"
+        frameborder="0"
+        class="article__iframe"
+      />
       <div v-if="data.demoUrl" class="article__buttons">
         <a :href="data.demoUrl" target="_blank" class="article__button">デモを見る</a>
         <a v-if="data.demoCode" :href="data.demoCode" target="_blank" class="article__button">コードを見る</a>
@@ -71,8 +81,11 @@ const breadcrumbItems = [
   &__iframe {
     width: 100%;
     height: 500px;
-    border: 1px solid var(--black);
+    border: 2px solid var(--black);
     border-radius: 0.5rem;
+    @include mixin.phone {
+      height: 380px;
+    }
   }
   &__buttons {
     margin-top: 1rem;

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { AnimationCategoryKey } from '~/data/pages/animation/animationData';
 import { animationData } from '~/data/pages/animation/animationData';
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 
 const route = useRoute();
 
@@ -22,6 +25,14 @@ const breadcrumbItems = [
   { path: '/animation', label: 'Webデザインアニメーション集' },
   { path: `/animation/${category}/${group}`, label: `${groupTitle}` },
 ];
+
+useSeoMeta({
+  title: `${groupTitle} | ${siteTitle}`,
+  ogTitle: `${groupTitle} | ${siteTitle}`,
+  description: `${groupTitle}の紹介します`,
+  ogDescription: `${groupTitle}の紹介します`,
+  ogImage: '/ogp.png',
+});
 </script>
 
 <template>
@@ -57,11 +68,18 @@ const breadcrumbItems = [
   font-size: 3.5rem;
   text-align: center;
   font-weight: 700;
+  @include mixin.phone {
+    font-size: 2.5rem;
+  }
 }
 .lead {
   text-align: center;
   margin-top: 1.5rem;
   line-height: 1.75;
+  @include mixin.phone {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
 }
 .list {
   margin-top: 4rem;
@@ -70,6 +88,12 @@ const breadcrumbItems = [
   column-gap: 1rem;
   row-gap: 1.5rem;
   margin: 3rem 1.5rem 0;
+  @include mixin.mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mixin.phone {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .card {
   display: flex;
@@ -78,6 +102,7 @@ const breadcrumbItems = [
   box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 22%);
   overflow: hidden;
   &__title {
+    font-size: 0.875rem;
     padding: 0.5rem 0.75rem;
   }
 }
