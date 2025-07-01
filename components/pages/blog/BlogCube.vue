@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     ref="cubeRef"
-    class="cube"
+    class="cube for-large"
     @mousedown="onMouseDown"
   >
     <div class="face front" :style="{ backgroundImage: `url(${image})` }"></div>

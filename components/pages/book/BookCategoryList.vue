@@ -23,10 +23,16 @@ import { bookCategory } from '~/data/pages/book/bookCategory';
 <style scoped lang="scss">
 .book-category {
   border-right: 1px solid var(--black);
+  @include mixin.phone {
+    display: none;
+  }
   &__item {
     display: grid;
     grid-template-columns: 1.875rem 1fr;
     border-bottom: 1px solid var(--black);
+    @include mixin.mobile {
+      grid-template-columns: 1.5rem 1fr;
+    }
   }
   &__num {
     display: flex;
@@ -34,12 +40,19 @@ import { bookCategory } from '~/data/pages/book/bookCategory';
     align-items: center;
     border-right: 1px solid var(--black);
     font-size: 0.875rem;
+    @include mixin.mobile {
+      font-size: 0.75rem;
+    }
   }
   &__link {
     display: flex;
     padding: 3rem 0.5rem;
     font-weight: 700;
     position: relative;
+    @include mixin.mobile {
+      font-size: 0.75rem;
+      padding-inline: 0.5rem 0.25rem;
+    }
     @include mixin.hover {
       .book-category__img {
         rotate: 6deg;
@@ -58,6 +71,10 @@ import { bookCategory } from '~/data/pages/book/bookCategory';
     border: 1px solid var(--black);
     rotate: 3deg;
     transition: 0.3s;
+    @include mixin.mobile {
+      width: 3rem;
+      right: 0.6rem;
+    }
   }
 }
 </style>

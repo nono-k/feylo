@@ -58,6 +58,10 @@ const route = useRoute();
     font-size: 1.6rem;
     font-weight: 700;
     transition: 0.3s;
+    @include mixin.mobile {
+      font-size: 1.25rem;
+      padding: 0.45rem 1.5rem;
+    }
     &.-active {
       background-color: var(--black);
       color: var(--white);

@@ -30,7 +30,7 @@ defineProps<{
         </div>
       </div>
     </div>
-    <div class="blog-header__right">
+    <div class="blog-header__right for-large">
       <BlogCube :image="blog.image" />
     </div>
   </header>
@@ -43,9 +43,23 @@ defineProps<{
   border-top: 1px solid var(--black);
   height: 28rem;
   background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='32' height='32' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M40 16h-6m-4 0h-6m8 8v-6m0-4V8M8 16H2m-4 0h-6m8 8v-6m0-4V8'  stroke-linecap='square' stroke-width='1' stroke='hsla(47,80.9%,61%,1)' fill='none'/><path d='M16-8v6m0 4v6m8-8h-6m-4 0H8m8 24v6m0 4v6m8-8h-6m-4 0H8'  stroke-linecap='square' stroke-width='1' stroke='hsla(4.1,89.6%,58.4%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  @include mixin.mobile {
+    grid-template-columns: 1fr;
+    height: 18rem;
+  }
+  @include mixin.phone {
+    height: 16rem;
+  }
+
   &__left {
     align-self: center;
     padding-inline: 1.75rem;
+    @include mixin.mobile {
+      padding-inline: 1rem;
+    }
+    @include mixin.phone {
+      padding-inline: 0;
+    }
   }
   &__left-wrap {
     background-color: var(--white);
@@ -53,14 +67,28 @@ defineProps<{
     background-size: 20px 20px;
     padding: 2rem 1.5rem;
     border: 1px solid var(--black);
+    @include mixin.mobile {
+      padding: 1.25rem;
+    }
   }
   &__title {
     font-weight: 700;
+    @include mixin.mobile {
+      font-size: 1.5rem;
+    }
+    @include mixin.mobile {
+      font-size: 1.25rem;
+    }
   }
   &__date-wrap {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+  &__date {
+    @include mixin.mobile {
+      font-size: 0.875rem;
+    }
   }
   &__tag-wrap {
     display: flex;

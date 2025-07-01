@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
+
 const route = useRoute();
 const { blog } = await useBlogContent(route.path);
 
@@ -9,8 +13,12 @@ const breadcrumbItems = [
 ];
 
 useSeoMeta({
-  title: `${blog.value?.title} | Nuxt Content Demo`,
+  title: `${blog.value?.title} | ${siteTitle}`,
+  ogTitle: `${blog.value?.title} | ${siteTitle}`,
   description: blog.value?.description,
+  ogDescription: blog.value?.description,
+  ogImage: blog.value?.image,
+  twitterCard: 'summary',
 });
 </script>
 
@@ -55,5 +63,8 @@ useSeoMeta({
   display: grid;
   grid-template-columns: 73% 27%;
   border-top: 1px solid var(--black);
+  @include mixin.mobile {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

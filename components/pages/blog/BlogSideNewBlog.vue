@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { blogs } = await useBlogContents();
-const newBlogs = blogs.value?.slice(0, 5);
+const newBlogs = computed(() => blogs.value?.slice(0, 5));
 </script>
 
 <template>
@@ -11,8 +11,8 @@ const newBlogs = blogs.value?.slice(0, 5);
         <div class="blog-side-new-blog__title">新着記事</div>
       </div>
     </div>
-    <ul class="blog-side-new-blog__list">
-      <li v-for="blog in newBlogs" :key="blog.id" class="blog-side-new-blog__item">
+    <ul v-if="newBlogs" class="blog-side-new-blog__list">
+      <li v-for="blog in newBlogs" :key="blog.path" class="blog-side-new-blog__item">
         <NuxtLink :to="`${blog.path}`" class="blog-side-new-blog__link">
           <div class="blog-side-new-blog__deco" />
           <div class="blog-side-new-blog__img">
@@ -36,7 +36,7 @@ const newBlogs = blogs.value?.slice(0, 5);
     border-bottom: 1px solid var(--black);
   }
   &__title-group {
-    max-width: 15rem;
+    max-width: 12rem;
     margin-inline: auto;
     padding-block: 0.5rem;
     text-align: center;
