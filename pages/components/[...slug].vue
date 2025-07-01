@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 const route = useRoute();
 const { data } = await useComponentsContent(route.path);
 
@@ -11,6 +14,14 @@ const breadcrumbItems = [
   { path: '/components', label: 'コンポーネントまとめ' },
   { path: `/components/${route.path}`, label: `${data.value?.title}` },
 ];
+
+useSeoMeta({
+  title: `${data.value?.title} | ${siteTitle}`,
+  ogTitle: `${data.value?.title} | ${siteTitle}`,
+  description: data.value?.description,
+  ogDescription: data.value?.description,
+  ogImage: data.value?.image,
+});
 </script>
 
 <template>
@@ -28,7 +39,7 @@ const breadcrumbItems = [
         <ComponentsBreadcrumb :items="breadcrumbItems" />
       </div>
 
-      <aside class="main__content">
+      <aside class="main__content for-large">
         <ComponentsToc v-if="data.body.toc?.links" :links="data.body.toc.links" />
       </aside>
     </div>
@@ -46,12 +57,21 @@ const breadcrumbItems = [
   display: grid;
   grid-template-columns: 1fr 250px;
   column-gap: 1rem;
+  @include mixin.mobile {
+    grid-template-columns: 1fr;
+  }
+  @include mixin.phone {
+    padding-inline: 0.5rem;
+  }
   &__content {
     height: calc(100vh - 60px - 1.25rem * 2);
     background-color: var(--white);
     border-radius: 1.5rem;
     border: 1px solid var(--black);
     overflow-y: auto;
+    @include mixin.phone {
+      height: calc(100vh - 48px - 1.2rem * 2);
+    }
     &::-webkit-scrollbar {
       width: 0.45rem;
     }
@@ -68,6 +88,9 @@ const breadcrumbItems = [
     padding-block: 1rem;
     margin-inline: 2rem;
     margin-bottom: 3.75rem;
+    @include mixin.mobile {
+      margin-inline: 1rem;
+    }
   }
 }
 </style>

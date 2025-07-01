@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { profileData } from '~/data/pages/profileData';
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
   { path: '/site-policy', label: '運営者について' },
 ];
+
+useSeoMeta({
+  title: `運営者について | ${siteTitle}`,
+  ogTitle: `運営者について | ${siteTitle}`,
+  description: '運営者についてです。',
+  ogDescription: '運営者についてです。',
+  ogImage: '/ogp.png',
+});
 </script>
 
 <template>
@@ -47,9 +58,14 @@ const breadcrumbItems = [
 
 <style scoped lang="scss">
 .wraper {
-  max-width: 1000px;
+  max-width: 1080px;
   margin-inline: auto;
   margin-block: 4rem 10rem;
+  padding-inline: 1.5rem;
+  @include mixin.mobile {
+    margin-top: 3rem;
+    padding-inline: 1rem;
+  }
 }
 
 .profile {
@@ -57,6 +73,10 @@ const breadcrumbItems = [
     border: 4px solid var(--black);
     border-radius: 1.5rem;
     overflow: hidden;
+    @include mixin.mobile {
+      border-width: 2px;
+      border-radius: 0.5rem;
+    }
   }
   &__item {
     display: grid;
@@ -66,6 +86,10 @@ const breadcrumbItems = [
     &:last-child {
       border-bottom: none;
     }
+    @include mixin.phone {
+      grid-template-columns: 92px 1fr;
+      font-size: 0.875rem;
+    }
   }
   &__dt {
     padding: 1rem;
@@ -74,9 +98,15 @@ const breadcrumbItems = [
     text-align: center;
     border-right: 1px solid var(--black);
     height: 100%;
+    @include mixin.phone {
+      padding: 0.75rem;
+    }
   }
   &__dd {
     padding: 1rem;
+    @include mixin.phone {
+      padding: 0.75rem;
+    }
   }
   &__sites {
     display: grid;
@@ -89,6 +119,9 @@ const breadcrumbItems = [
     padding: 1.5rem 2rem;
     &:nth-child(2n) {
       border-left: 1px solid var(--black);
+    }
+    @include mixin.phone {
+      padding: 1rem 0.75rem;
     }
   }
   &__link {

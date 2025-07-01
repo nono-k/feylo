@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 const { data } = await useComponentsContents();
 
 definePageMeta({
@@ -9,6 +12,14 @@ const breadcrumbItems = [
   { path: '/', label: 'HOME' },
   { path: '/components', label: 'コンポーネントまとめ' },
 ];
+
+useSeoMeta({
+  title: `コンポーネントまとめ | ${siteTitle}`,
+  ogTitle: `コンポーネントまとめ | ${siteTitle}`,
+  description: 'Web制作初学者向けにHTML/CSS/JavaScriptで楽に使い回せるようなコンポーネントをまとめました。',
+  ogDescription: 'Web制作初学者向けにHTML/CSS/JavaScriptで楽に使い回せるようなコンポーネントをまとめました。',
+  ogImage: '/ogp.png',
+});
 </script>
 
 <template>
@@ -45,6 +56,9 @@ const breadcrumbItems = [
     border-radius: 1.5rem;
     border: 1px solid var(--black);
     overflow-y: auto;
+    @include mixin.phone {
+      margin-inline: 0.5rem;
+    }
     &::-webkit-scrollbar {
       width: 0.45rem;
     }
@@ -61,20 +75,42 @@ const breadcrumbItems = [
     padding-block: 1rem;
     margin-inline: 2rem;
     margin-bottom: 3.75rem;
+    @include mixin.mobile {
+      margin-inline: 1rem;
+      margin-bottom: 2rem;
+    }
   }
   &__title {
     font-size: 5.5rem;
     text-align: center;
+    @include mixin.mobile {
+      font-size: 3rem;
+    }
+    @include mixin.phone {
+      font-size: 2rem;
+    }
   }
   &__lead {
     font-size: 1rem;
     text-align: center;
+    @include mixin.mobile {
+      margin-top: 0.5rem;
+      margin-inline: 1rem;
+      font-size: 0.875rem;
+    }
+    @include mixin.phone {
+      margin-inline: 0.5rem;
+    }
   }
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
     margin-top: 4rem;
+    @include mixin.mobile {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 3rem;
+    }
   }
   &__list-item {
     display: contents;

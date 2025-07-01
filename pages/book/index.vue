@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { BookType } from '~/data/pages/book/bookType';
 import { bookData } from '~/data/pages/book/bookData';
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 
 type SectionData = {
   title: string;
@@ -46,6 +49,14 @@ const breadcrumbItems = [
   { path: '/', label: 'HOME' },
   { path: '/book', label: 'おすすめ本' },
 ];
+
+useSeoMeta({
+  title: `おすすめ本 | ${siteTitle}`,
+  ogTitle: `おすすめ本 | ${siteTitle}`,
+  description: '管理人が読んでためになった本をまとめて紹介します',
+  ogDescription: '管理人が読んでためになった本をまとめて紹介します',
+  ogImage: '/ogp.png',
+});
 </script>
 
 <template>
@@ -80,8 +91,9 @@ const breadcrumbItems = [
           </div>
         </section>
       </div>
-
-      <BlogSide />
+      <div class="book__aside">
+        <BlogSide />
+      </div>
     </div>
 
     <section class="section">
@@ -100,20 +112,39 @@ const breadcrumbItems = [
   display: grid;
   grid-template-columns: 16rem auto 27%;
   border-top: 1px solid var(--black);
+  @include mixin.mobile {
+    grid-template-columns: 12rem 1fr;
+  }
+  @include mixin.phone {
+    grid-template-columns: 1fr;
+  }
   &__main {
     margin: 1rem 1.5rem 3rem;
+    @include mixin.mobile {
+      margin-inline: 1rem;
+    }
   }
   &__title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
+    @include mixin.phone {
+      font-size: 2rem;
+    }
   }
   &__lead {
     margin-top: 0.5rem;
     text-align: center;
+    @include mixin.phone {
+      font-size: 0.875rem;
+      letter-spacing: 0;
+    }
   }
   &__section {
-    margin-top: 4rem
+    margin-top: 4rem;
+    @include mixin.phone {
+      margin-top: 3rem;
+    }
   }
   &__section-title {
     font-size: 1.5rem;
@@ -121,6 +152,9 @@ const breadcrumbItems = [
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    @include mixin.phone {
+      font-size: 1.25rem;
+    }
     &::before {
       content: '';
       width: 0.5rem;
@@ -134,6 +168,9 @@ const breadcrumbItems = [
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    @include mixin.mobile {
+      gap: 1rem;
+    }
   }
   &__item {
     display: contents;
@@ -155,6 +192,9 @@ const breadcrumbItems = [
     padding: 1rem;
     background-color: var(--gray);
     transition: background-color 0.3s;
+    @include mixin.phone {
+      padding: 0.5rem;
+    }
   }
   &__name {
     font-size: 0.875rem;
@@ -163,6 +203,14 @@ const breadcrumbItems = [
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+  }
+  &__aside {
+    @include mixin.mobile {
+      grid-column: 2 / 3;
+    }
+    @include mixin.phone {
+      grid-column: 1 / -1;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <Hero />
-  <HomeNews />
+  <!-- <HomeNews /> -->
   <main>
     <section class="section">
       <HomeHeading text="最新記事一覧">Blog</HomeHeading>

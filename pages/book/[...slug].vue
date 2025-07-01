@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { BookType } from '~/data/pages/book/bookType';
 import { bookData } from '~/data/pages/book/bookData';
+import { siteConfig } from '~/utils/siteConfig';
+
+const { siteTitle } = siteConfig;
 
 const route = useRoute();
 const slug = route.params.slug[0];
@@ -38,6 +41,14 @@ const breadcrumbItems = [
   { path: '/book', label: 'おすすめ本' },
   { path: '/book', label: `${title}のおすすめ本` },
 ];
+
+useSeoMeta({
+  title: `${title}を学ぶあなたにおすすめの本【${count}選】紹介！ | ${siteTitle}`,
+  ogTitle: `${title}を学ぶあなたにおすすめの本【${count}選】紹介！ | ${siteTitle}`,
+  description: `${title}のおすすめ本をまとめて紹介します。`,
+  ogDescription: `${title}のおすすめ本をまとめて紹介します。`,
+  ogImage: '/ogp.png',
+});
 </script>
 
 <template>
@@ -66,7 +77,9 @@ const breadcrumbItems = [
         <SnsShare :title="title" :slug="route.path" />
       </div>
 
-      <BlogSide />
+      <div class="book__aside">
+        <BlogSide />
+      </div>
     </div>
 
     <section class="section">
@@ -86,6 +99,12 @@ const breadcrumbItems = [
   display: grid;
   grid-template-columns: 16rem auto 27%;
   border-top: 1px solid var(--black);
+  @include mixin.mobile {
+    grid-template-columns: 12rem 1fr;
+  }
+  @include mixin.phone {
+    grid-template-columns: 1fr;
+  }
   &__main {
     margin: 1.5rem 0 3rem;
   }
@@ -93,10 +112,17 @@ const breadcrumbItems = [
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
+    @include mixin.mobile {
+      margin-inline: 1rem;
+    }
   }
   &__lead {
     margin-top: 0.5rem;
     text-align: center;
+    @include mixin.phone {
+      font-size: 0.875rem;
+      letter-spacing: 0;
+    }
   }
   &__section {
     margin-top: 3rem;
@@ -128,10 +154,17 @@ const breadcrumbItems = [
   &__name {
     font-size: 1.15rem;
     font-weight: 700;
+    @include mixin.phone {
+      font-size: 1rem;
+    }
   }
   &__desc {
     margin-top: 0.5rem;
     font-size: 0.95rem;
+    @include mixin.phone {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+    }
   }
   &__link {
     display: inline-block;
@@ -144,6 +177,11 @@ const breadcrumbItems = [
     font-weight: 700;
     position: relative;
     overflow: hidden;
+    @include mixin.mobile {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -159,6 +197,14 @@ const breadcrumbItems = [
       &::before {
         left: 100%;
       }
+    }
+  }
+  &__aside {
+    @include mixin.mobile {
+      grid-column: 2 / 3;
+    }
+    @include mixin.phone {
+      grid-column: 1 / -1;
     }
   }
 }
