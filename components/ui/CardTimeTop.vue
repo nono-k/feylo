@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <NuxtLink :to="`${data.path}`" class="card">
     <div class="card__top">
-      <time :datetime="`${data.date}`" class="card__time ff-zilla-slab-700">{{ parseDate(data.date) }}</time>
+      <time :datetime="parseDateTime(data.date)" class="card__time ff-zilla-slab-700">{{ parseDate(data.date) }}</time>
       <div class="card__img">
         <img :src="data.image" :alt="data.title" />
       </div>
@@ -22,7 +22,7 @@ defineProps<{
       <ul class="card__tags">
         <li v-for="tag in data.tags" :key="tag" class="card__tag">{{ tag }}</li>
       </ul>
-      <h3 class="card__title">{{ data.title }}</h3>
+      <h3 class="card__title text-ellipsis">{{ data.title }}</h3>
     </div>
   </NuxtLink>
 </template>
@@ -33,6 +33,9 @@ defineProps<{
   margin-inline: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--black);
+  @include mixin.mobile {
+    margin-inline: 1rem;
+  }
   @include mixin.hover {
     .card__img {
       rotate: -10deg;
@@ -69,9 +72,13 @@ defineProps<{
     border-radius: 0.75rem;
   }
   &__title {
+    height: 46px;
     margin-top: 0.5rem;
     font-size: 0.95rem;
     font-weight: 700;
+    @include mixin.phone {
+      height: auto;
+    }
   }
 }
 </style>

@@ -20,7 +20,7 @@ defineProps<{
         <li v-for="tag in data.tags" :key="tag" class="card__tag">{{ tag }}</li>
       </ul>
       <h3 class="card__title">{{ data.title }}</h3>
-      <time :datetime="`${data.date}`" class="card__time ff-zilla-slab-700">{{ parseDate(data.date) }}</time>
+      <time :datetime="parseDateTime(data.date)" class="card__time ff-zilla-slab-700">{{ parseDate(data.date) }}</time>
     </div>
   </NuxtLink>
 </template>
@@ -29,6 +29,10 @@ defineProps<{
 .card {
   display: inline-block;
   padding: 2rem;
+  @include mixin.phone {
+    width: 100%;
+    padding: 1.5rem;
+  }
   @include mixin.hover {
     .card__img {
       rotate: -10deg;
@@ -40,10 +44,20 @@ defineProps<{
     transition-property: rotate, scale;
     transition-duration: 0.57s;
     transition-timing-function: cubic-bezier(0.28, 2.5, 0.58, 0.73);
+    @include mixin.phone {
+      max-width: 200px;
+      margin-inline: auto;
+    }
   }
   &__time {
     display: block;
     text-align: right;
+    @include mixin.mobile {
+      margin-top: 0.5rem;
+    }
+    @include mixin.phone {
+      font-size: 0.875rem;
+    }
   }
   &__body {
     margin-top: 0.5rem;
@@ -63,6 +77,15 @@ defineProps<{
     margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
+    @include mixin.phone {
+      font-size: 0.875rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+    }
   }
 }
 </style>
