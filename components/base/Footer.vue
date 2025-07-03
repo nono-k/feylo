@@ -9,9 +9,24 @@ import { BlogTags } from '~/data/blogTags';
       <div class="footer__keywords-marquee-wrap">
         <div v-for="n in 2" :key="n" class="footer__keywords-marquee">
           <ul class="footer__keywords-marquee-list">
-            <li v-for="tag in BlogTags" :key="tag.name" class="footer__keywords-marquee-item">
-              <NuxtLink :to="`/tag/${tag.slug}`" class="footer__keywords-marquee-link">#{{ tag.name }}</NuxtLink>
-            </li>
+            <NuxtMarquee
+              :auto-fill="true"
+              :speed="10"
+              :delay="n * 5"
+              :pause-on-hover="true"
+              :direction="n === 2 ? 'right' : 'left'"
+            >
+              <li v-for="tag in BlogTags" :key="tag.name" class="footer__keywords-marquee-item">
+                <NuxtLink
+                  :to="`/tag/${tag.slug}`"
+                  class="footer__keywords-marquee-link"
+                  :style="`--hover-color: ${tag.color}`"
+                >
+                  <span class="footer__keywords-slash ff-open-sans-700" :style="`color: ${tag.color}`">#</span>
+                  {{ tag.name }}
+                </NuxtLink>
+              </li>
+            </NuxtMarquee>
           </ul>
         </div>
       </div>
@@ -21,15 +36,20 @@ import { BlogTags } from '~/data/blogTags';
       <div class="footer__content-wrap">
         <ul class="footer__content-list">
           <li class="footer__content-item">
+            <NuxtLink to="/blog" class="footer__content-link" style="background: var(--green);">
+              <span class="footer__content-text">ブログ記事一覧</span>
+            </NuxtLink>
+          </li>
+          <li class="footer__content-item">
             <NuxtLink to="/components" class="footer__content-link" style="background: var(--yellow);">
               <span class="footer__content-text">コンポーネントまとめ</span>
             </NuxtLink>
           </li>
-          <li class="footer__content-item">
+          <!-- <li class="footer__content-item">
             <NuxtLink to="/tools" class="footer__content-link" style="background: var(--sky-blue);">
               <span class="footer__content-text">Web制作に役立つツール集</span>
             </NuxtLink>
-          </li>
+          </li> -->
           <li class="footer__content-item">
             <NuxtLink to="/animation" class="footer__content-link" style="background: var(--orange);">
               <span class="footer__content-text">Webデザインアニメーション帳</span>
@@ -45,20 +65,22 @@ import { BlogTags } from '~/data/blogTags';
     </div>
     <div class="footer__bottom">
       <ul class="footer__bottom-links">
-        <li>
+        <!-- <li>
           <a href="" class="footer__bottom-link">このサイトについて</a>
+        </li> -->
+        <li>
+          <NuxtLink to="/profile" class="footer__bottom-link">運営者について</NuxtLink>
         </li>
         <li>
-          <a href="" class="footer__bottom-link">運営者について</a>
+          <NuxtLink to="/site-policy" class="footer__bottom-link">サイトポリシー</NuxtLink>
         </li>
         <li>
-          <a href="" class="footer__bottom-link">ご利用規約</a>
-        </li>
-        <li>
-          <a href="" class="footer__bottom-link">プライバシーポリシー</a>
+          <NuxtLink to="/privacy-policy" class="footer__bottom-link">プライバシーポリシー</NuxtLink>
         </li>
       </ul>
-      <div class="footer__bottom-logo ff-zilla-slab-700-italic">Felylo</div>
+      <div class="footer__bottom-logo ff-zilla-slab-700-italic">
+        <NuxtLink to="/">Felylo</NuxtLink>
+      </div>
       <small class="footer__bottom-copy">Copyright© Felylo All Rights Reserved.</small>
     </div></footer>
 </template>
@@ -82,17 +104,36 @@ import { BlogTags } from '~/data/blogTags';
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    @include mixin.phone {
+      gap: 0.75rem;
+    }
   }
   &__keywords-marquee-list {
     display: flex;
     gap: 0.5rem;
   }
+  &__keywords-marquee-item {
+    margin-right: 1rem;
+    @include mixin.phone {
+      margin-right: 0.5rem;
+    }
+  }
   &__keywords-marquee-link {
+    display: inline-block;
+    line-height: 1;
     font-size: 0.75rem;
     font-weight: 700;
     background: var(--gray);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.5rem;
+    background: #eee;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.75rem;
+    transition: 0.3s;
+    @include mixin.hover {
+      background: var(--hover-color);
+      .footer__keywords-slash {
+        color: var(--black) !important;
+      }
+    }
   }
   &__content {
     margin-top: 1.5rem;
@@ -100,12 +141,18 @@ import { BlogTags } from '~/data/blogTags';
   }
   &__content-wrap {
     margin-top: 2.5rem;
+    @include mixin.phone {
+      margin-top: 1.75rem;
+    }
   }
   &__content-list {
     display: flex;
     height: 25rem;
     > * + * {
       margin-left: -1px;
+    }
+    @include mixin.phone {
+      height: 22rem;
     }
   }
   &__content-item {
@@ -120,6 +167,9 @@ import { BlogTags } from '~/data/blogTags';
     @include mixin.hover {
       translate: 0 -1rem
     }
+    @include mixin.phone {
+      width: 4rem;
+    }
   }
   &__content-link {
     display: block;
@@ -131,6 +181,11 @@ import { BlogTags } from '~/data/blogTags';
     margin-left: 1.5rem;
     margin-top: 1.5rem;
     font-weight: 700;
+    @include mixin.phone {
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      margin-left: 1.25rem;
+    }
   }
   &__bottom {
     padding-block: 2rem;
@@ -140,6 +195,8 @@ import { BlogTags } from '~/data/blogTags';
   }
   &__bottom-links {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     li {
       &:last-child {
         .footer__bottom-link {
