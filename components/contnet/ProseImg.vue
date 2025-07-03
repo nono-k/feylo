@@ -46,6 +46,11 @@ const isCloudinaryVideo = isStringSrc && props.src.startsWith(`https://res.cloud
   max-width: 800px;
   margin-inline: auto;
   margin-block: 3rem 2rem;
+  &__img {
+    margin-inline: auto;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0 var(--black);
+  }
   &__caption {
     margin-top: 0.5rem;
     text-align: center;
