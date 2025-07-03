@@ -9,11 +9,12 @@
   text-decoration: none !important;
   padding: 0 !important;
   background: var(--white);
-  border: 1px solid currentColor;
+  border: 2px solid currentColor;
+  box-shadow: 6px 6px 0 var(--black);
   border-radius: 0.5rem;
   display: flex;
   align-items: stretch;
-  transition: background 200ms ease-in-out 0s, box-shadow 200ms ease-in-out 0s;
+  transition: translate 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   .figure__caption {
     display: none;
@@ -21,8 +22,8 @@
 }
 
 .rlc-container:hover {
-  // border-color: var(--primary);
-  box-shadow: 0 4px 5px 2px rgba(180, 180, 180, 0.2);
+  translate: 6px 6px;
+  box-shadow: none;
 }
 
 .rlc-info {
@@ -36,6 +37,7 @@
 
 .rlc-title {
   font-size: 1rem;
+  font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63,6 +65,11 @@
   }
 
   .figure__img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: none !important;
+    box-shadow: none !important;
     img {
       vertical-align: baseline;
     }
@@ -96,16 +103,12 @@
   }
 
   .figure__img {
-    @include mixin.mobile {
-      height: 100%;
-    }
+    height: 100%;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   img {
-    object-fit: cover;
-    width: 100%;
     height: 100%;
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
   }
 }

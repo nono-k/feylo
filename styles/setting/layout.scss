@@ -12,8 +12,11 @@
     grid-template-columns: repeat(4, 1fr);
     row-gap: 2rem;
     @include mixin.mobile {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       row-gap: 0;
+    }
+    @include mixin.phone {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   &__item {
@@ -23,7 +26,7 @@
     &:nth-child(4n) {
       border-right: none;
     }
-    @include mixin.mobile {
+    @include mixin.phone {
       &:nth-child(n + 3) {
         border-top: none;
       }
