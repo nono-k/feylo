@@ -1,8 +1,19 @@
 <script setup lang="ts">
-const props = defineProps<{
+interface Props {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   text?: string;
-}>();
+  marqueeSpeed?: number;
+  marqueeDirection?: 'left' | 'right';
+  marqueePauseOnHover?: boolean;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  level: 2,
+  text: '',
+  marqueeSpeed: 40,
+  marqueeDirection: 'left',
+  marqueePauseOnHover: false,
+});
 
 const tag = `h${props.level || 2}`;
 </script>
@@ -10,7 +21,14 @@ const tag = `h${props.level || 2}`;
 <template>
   <div class="heading__wrap">
     <div class="heading__deco ff-open-sans-700">
-      <slot />
+      <NuxtMarquee
+        :auto-fill="true"
+        :speed="40"
+        :direction="props.marqueeDirection"
+        :pause-on-hover="props.marqueePauseOnHover"
+      >
+        <slot />
+      </NuxtMarquee>
     </div>
     <component :is="tag" class="heading container ff-open-sans-700">
       <slot />
@@ -24,6 +42,13 @@ const tag = `h${props.level || 2}`;
   font-size: 8rem;
   text-transform: uppercase;
   line-height: 1.25;
+  @include mixin.mobile {
+    font-size: 5rem;
+  }
+  @include mixin.phone {
+    font-size: 3.5rem;
+    margin-top: 0.5rem;
+  }
   &__deco {
     font-size: 15rem;
     height: 6.25rem;
@@ -33,6 +58,20 @@ const tag = `h${props.level || 2}`;
     text-transform: uppercase;
     overflow: hidden;
     color: var(--gray);
+    @include mixin.mobile {
+      font-size: 10rem;
+      height: 5rem;
+    }
+    @include mixin.phone {
+      font-size: 7rem;
+      height: 3.5rem;
+    }
+  }
+}
+.text {
+  @include mixin.mobile {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
   }
 }
 </style>

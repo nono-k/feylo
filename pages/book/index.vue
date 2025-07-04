@@ -205,6 +205,7 @@ useSeoMeta({
     margin-top: 3rem;
   }
   &__aside {
+    border-left: 1px solid var(--black);
     @include mixin.mobile {
       grid-column: 2 / 3;
     }

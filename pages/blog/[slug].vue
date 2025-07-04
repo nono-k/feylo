@@ -44,7 +44,9 @@ useSeoMeta({
         <SnsShare :title="blog.title" :slug="route.path" />
       </BlogMarkdownBody>
 
-      <BlogSide />
+      <div class="article__aside">
+        <BlogSide />
+      </div>
     </div>
 
     <section class="section">
@@ -65,6 +67,9 @@ useSeoMeta({
   border-top: 1px solid var(--black);
   @include mixin.mobile {
     grid-template-columns: 1fr;
+  }
+  &__aside {
+    border-left: 1px solid var(--black);
   }
 }
 </style>

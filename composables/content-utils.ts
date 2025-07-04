@@ -16,7 +16,7 @@ export const useBlogContent = async (path: string) => {
 };
 
 export const useBlogRandomContents = async () => {
-  const { data: blogs } = await useAsyncData('blog', () =>
+  const { data: blogs } = await useAsyncData('blogRandom', () =>
     queryCollection('blog')
       .all(),
   );

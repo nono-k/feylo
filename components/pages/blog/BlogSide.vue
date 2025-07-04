@@ -9,6 +9,6 @@
 
 <style scoped lang="scss">
 .blog-side {
-  border-left: 1px solid var(--black);
+  // border-left: 1px solid var(--black);
 }
 </style>

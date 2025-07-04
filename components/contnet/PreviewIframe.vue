@@ -35,6 +35,11 @@ const iframeContent = computed(() => {
         }
         .flex {
           display: flex;
+          &.center {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          }
           &[gap="1rem"] {
             gap: 1rem;
           }

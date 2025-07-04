@@ -50,10 +50,15 @@ defineProps<{
   &__list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
   }
   &__item {
     display: flex;
     font-size: 0.875rem;
+    @include mixin.mobile {
+      font-size: 0.75rem;
+    }
     &:first-child {
       &::before {
         content: '🏠';
@@ -66,6 +71,9 @@ defineProps<{
         display: block;
         margin-top: -0.1em;
         margin-inline: 1rem;
+        @include mixin.mobile {
+          margin-inline: 0.5rem;
+        }
       }
     }
   }
@@ -76,6 +84,16 @@ defineProps<{
     text-decoration: underline;
     @include mixin.hover {
       opacity: 0.7;
+    }
+  }
+  &__text {
+    @include mixin.phone {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
     }
   }
 }

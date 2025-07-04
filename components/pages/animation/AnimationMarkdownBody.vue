@@ -16,7 +16,7 @@
     font-size: 1rem;
   }
 
-  h2, h3 {
+  h2, h3, h4, h5, h6 {
     font-weight: 700;
     a {
       color: var(--black);
@@ -58,6 +58,25 @@
     }
     + .pre {
       margin-top: 1.25rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    padding-inline: 1rem;
+    text-indent: -1em;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 0.6rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: var(--accent-orange);
+      margin-right: 0.5rem;
+    }
+    + p {
+      margin-top: 0.5rem;
     }
   }
 

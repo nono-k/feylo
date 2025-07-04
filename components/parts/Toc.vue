@@ -48,11 +48,17 @@ defineProps<{
     &.orange {
       background-color: var(--orange);
     }
+    @include mixin.mobile {
+      font-size: 1rem;
+    }
   }
   &__list {
     padding: 1.25rem 1rem 1.3rem 3.125rem;
     column-count: 2;
     column-gap: 3.125rem;
+    @include mixin.mobile {
+      padding-left: 2.5rem;
+    }
   }
   &__list-item {
     break-inside: avoid;
@@ -60,12 +66,19 @@ defineProps<{
     list-style: decimal;
     font-weight: 700;
     font-size: 1.15rem;
+    @include mixin.mobile {
+      font-size: 1rem;
+    }
     li {
       color: rgba(0,13,37,.6);
       font-weight: 400;
       margin-top: 0.5rem;
       font-size: 1rem;
       font-weight: 400;
+      @include mixin.mobile {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+      }
     }
   }
   &__link {

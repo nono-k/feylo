@@ -10,6 +10,11 @@ register();
     <ClientOnly>
       <swiper-container
         :slides-per-view="1"
+        :loop="true"
+        :autoplay="{
+          delay: 6000,
+          disableOnInteraction: false,
+        }"
         :pagination="{
           el: '.swiper-pagination',
           type: 'fraction',
@@ -21,7 +26,7 @@ register();
         class="hero__main-swiper"
       >
         <swiper-slide v-for="item in heroData" :key="item.title" class="hero__main-slide">
-          <NuxtLink :to="item.link">
+          <NuxtLink :to="item.link" class="hero__main-link">
             <div class="hero__main-img">
               <img :src="item.img" alt="">
             </div>
@@ -64,16 +69,27 @@ register();
   &__main-slide {
     width: 100% !important;
   }
+  &__main-link {
+    @include mixin.hover {
+      .hero__main-img {
+        img {
+          scale: 1.05;
+        }
+      }
+    }
+  }
   &__main-img {
     height: 490px;
     position: relative;
+    overflow: hidden;
+    border: 1px solid var(--black);
     @include mixin.phone {
       height: auto;
     }
     img {
       height: 100%;
       object-fit: cover;
-      border: 1px solid var(--black);
+      transition: 0.3s;
     }
   }
   &__main-title {

@@ -17,10 +17,8 @@ const { randomBlogs } = await useBlogRandomContents();
 <style lang="scss" scoped>
 .random-blog {
   margin-top: 3rem;
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 2rem;
+  @include mixin.phone {
+    margin-top: 1rem;
   }
   &__item {
     border-right: 1px solid var(--black);

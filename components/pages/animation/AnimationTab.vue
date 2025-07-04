@@ -126,6 +126,11 @@ onUnmounted(() => {
     border-radius: 0.75rem;
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 12%), 0 2px 3px 0 rgb(0 0 0 / 22%);
     overflow: hidden;
+    transition: 0.2s ease-in-out;
+    @include mixin.hover {
+      box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
+      translate: 0 -4px;
+    }
   }
   &__item-icon {
     display: flex;
