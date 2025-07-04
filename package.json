@@ -18,6 +18,7 @@
     "@nuxt/scripts": "^0.11.8",
     "@nuxtjs/cloudinary": "^4.0.0",
     "@unhead/vue": "^2.0.11",
+    "baseline-status": "^1.0.11",
     "dayjs": "^1.11.13",
     "nuxt": "^3.17.5",
     "nuxt-marquee": "^1.0.4",
