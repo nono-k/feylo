@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  ssr: true,
   components: [
     {
       path: '~/components',
@@ -83,6 +84,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  nitro: {
+    preset: 'cloudflare-pages',
   },
   vite: {
     css: {
