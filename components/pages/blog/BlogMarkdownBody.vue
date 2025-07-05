@@ -10,6 +10,7 @@
   padding-inline: var(--container-padding);
   font-size: 1.125rem;
   line-height: 2;
+  overflow-x: auto;
   @include mixin.mobile {
     font-size: 1rem;
   }
