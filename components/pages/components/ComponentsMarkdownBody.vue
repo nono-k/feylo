@@ -63,6 +63,12 @@
     }
   }
 
+  a {
+    color: #3366cc;
+    text-decoration: underline;
+    text-underline-offset: 0.25em
+  }
+
   p {
     margin-top: 1.5rem;
   }
@@ -76,6 +82,14 @@
     color: #484f60;
     font-size: 0.85rem;
     font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
+  }
+
+  ol, ul {
+    margin-top: 1.5rem;
+    li {
+      list-style: inherit;
+      margin-left: 1rem;
+    }
   }
 }
 </style>
