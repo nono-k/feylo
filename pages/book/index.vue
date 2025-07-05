@@ -3,7 +3,7 @@ import type { BookType } from '~/data/pages/book/bookType';
 import { bookData } from '~/data/pages/book/bookData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 type SectionData = {
   title: string;
@@ -55,7 +55,7 @@ useSeoMeta({
   ogTitle: `おすすめ本 | ${siteTitle}`,
   description: '管理人が読んでためになった本をまとめて紹介します',
   ogDescription: '管理人が読んでためになった本をまとめて紹介します',
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

@@ -2,7 +2,7 @@
 import { siteConfig } from '~/utils/siteConfig';
 import { BlogTags } from '~/data/blogTags';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const route = useRoute();
 const currentTagName = BlogTags.find(tag => tag.slug === route.params.tag)?.name;
@@ -24,7 +24,7 @@ useSeoMeta({
   ogTitle: `${currentTagName}の記事一覧 | ${siteTitle}`,
   description: `${currentTagName}の記事一覧です。`,
   ogDescription: `${currentTagName}の記事一覧です。`,
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteUrl } = siteConfig;
 
 const route = useRoute();
 const { blog } = await useBlogContent(route.path);
@@ -17,7 +17,7 @@ useSeoMeta({
   ogTitle: `${blog.value?.title} | ${siteTitle}`,
   description: blog.value?.description,
   ogDescription: blog.value?.description,
-  ogImage: blog.value?.image,
+  ogImage: `${siteUrl}${blog.value?.image}`,
   twitterCard: 'summary',
 });
 </script>

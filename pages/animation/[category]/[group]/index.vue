@@ -3,7 +3,7 @@ import type { AnimationCategoryKey } from '~/data/pages/animation/animationData'
 import { animationData } from '~/data/pages/animation/animationData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const route = useRoute();
 
@@ -31,7 +31,7 @@ useSeoMeta({
   ogTitle: `${groupTitle} | ${siteTitle}`,
   description: `${groupTitle}の紹介します`,
   ogDescription: `${groupTitle}の紹介します`,
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

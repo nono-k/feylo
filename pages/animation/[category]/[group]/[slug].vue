@@ -3,7 +3,7 @@ import type { AnimationCategoryKey } from '~/data/pages/animation/animationData'
 import { animationData } from '~/data/pages/animation/animationData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteUrl } = siteConfig;
 
 const route = useRoute();
 
@@ -26,7 +26,7 @@ useSeoMeta({
   ogTitle: `${data.value?.title} | ${siteTitle}`,
   description: `${data.value?.description}`,
   ogDescription: `${data.value?.description}`,
-  ogImage: `${data.value?.image}`,
+  ogImage: `${siteUrl}${data.value?.image}`,
 });
 </script>
 

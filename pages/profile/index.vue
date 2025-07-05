@@ -2,7 +2,7 @@
 import { profileData } from '~/data/pages/profileData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
@@ -14,7 +14,7 @@ useSeoMeta({
   ogTitle: `運営者について | ${siteTitle}`,
   description: '運営者についてです。',
   ogDescription: '運営者についてです。',
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

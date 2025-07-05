@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteUrl } = siteConfig;
 const route = useRoute();
 const { data } = await useComponentsContent(route.path);
 
@@ -20,7 +20,7 @@ useSeoMeta({
   ogTitle: `${data.value?.title} | ${siteTitle}`,
   description: data.value?.description,
   ogDescription: data.value?.description,
-  ogImage: data.value?.image,
+  ogImage: `${siteUrl}${data.value?.image}`,
 });
 </script>
 

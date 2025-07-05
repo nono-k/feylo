@@ -3,7 +3,7 @@ import type { BookType } from '~/data/pages/book/bookType';
 import { bookData } from '~/data/pages/book/bookData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const route = useRoute();
 const slug = route.params.slug[0];
@@ -47,7 +47,7 @@ useSeoMeta({
   ogTitle: `${title}を学ぶあなたにおすすめの本【${count}選】紹介！ | ${siteTitle}`,
   description: `${title}のおすすめ本をまとめて紹介します。`,
   ogDescription: `${title}のおすすめ本をまとめて紹介します。`,
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

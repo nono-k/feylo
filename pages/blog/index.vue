@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const { blogs } = await useBlogContents();
 
@@ -15,7 +15,7 @@ useSeoMeta({
   ogTitle: `すべての記事一覧 | ${siteTitle}`,
   description: 'すべての記事一覧です。',
   ogDescription: 'すべての記事一覧です。',
-  ogImage: '/ogp.png',
+  ogImage: `${siteImg}`,
 });
 </script>
 

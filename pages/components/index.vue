@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 const { data } = await useComponentsContents();
 
 definePageMeta({
@@ -18,7 +18,7 @@ useSeoMeta({
   ogTitle: `コンポーネントまとめ | ${siteTitle}`,
   description: 'Web制作初学者向けにHTML/CSS/JavaScriptで楽に使い回せるようなコンポーネントをまとめました。',
   ogDescription: 'Web制作初学者向けにHTML/CSS/JavaScriptで楽に使い回せるようなコンポーネントをまとめました。',
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

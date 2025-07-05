@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
@@ -13,7 +13,7 @@ useSeoMeta({
   ogTitle: `Webデザインアニメーション集 | ${siteTitle}`,
   description: 'Web制作をはじめたばかりの方へアニメーションの作り方を分かりやすく解説しています',
   ogDescription: 'Web制作をはじめたばかりの方へアニメーションの作り方を分かりやすく解説しています',
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 

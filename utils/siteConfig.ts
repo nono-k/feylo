@@ -11,5 +11,5 @@ export const siteConfig: SiteConfig = {
   siteDesc: 'Web制作についてのメディアサイト「Feylo」です。初学者に向けて、Web制作の基礎から応用までを分かりやすく解説します。',
   siteUrl: 'https://feylo.dev',
   siteType: 'website',
-  siteImg: '/OGP.png',
+  siteImg: 'https://feylo.dev/OGP.png',
 };

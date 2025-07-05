@@ -2,7 +2,7 @@
 import { sitePolicyData } from '~/data/pages/sitePolicyData';
 import { siteConfig } from '~/utils/siteConfig';
 
-const { siteTitle } = siteConfig;
+const { siteTitle, siteImg } = siteConfig;
 
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
@@ -14,7 +14,7 @@ useSeoMeta({
   ogTitle: `サイトポリシー | ${siteTitle}`,
   description: 'サイトポリシーです。',
   ogDescription: 'サイトポリシーです。',
-  ogImage: '/ogp.png',
+  ogImage: siteImg,
 });
 </script>
 
