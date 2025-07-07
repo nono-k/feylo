@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     'nuxt-marquee',
     '@nuxtjs/cloudinary',
     '@nuxt/scripts',
+    '@nuxtjs/sitemap',
   ],
   $production: {
     scripts: {
