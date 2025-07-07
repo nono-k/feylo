@@ -47,7 +47,7 @@ useSeoMeta({
             <div class="card__img">
               <img :src="item.image" :alt="item.title" />
             </div>
-            <div class="card__title">
+            <div class="card__title text-ellipsis">
               {{ item.title }}
             </div>
           </NuxtLink>
@@ -108,7 +108,7 @@ useSeoMeta({
   }
   &__title {
     font-size: 0.875rem;
-    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0.75rem;
   }
 }
 </style>
