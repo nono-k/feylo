@@ -56,6 +56,10 @@ export default defineNuxtConfig({
         /^(swiper|swiper-slide|swiper-container)$/.test(tag) || tag === 'baseline-status',
     },
   },
+  site: {
+    url: siteUrl,
+    name: siteTitle,
+  },
   content: {
     build: {
       markdown: {
