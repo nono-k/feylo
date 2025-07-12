@@ -1,6 +1,6 @@
 ---
 title: "Button"
-description: "Web製作において必須のボタンのコンポーネントです。汎用的に使い回せるよう作りましょう。"
+description: "Web制作において必須のボタンのコンポーネントです。汎用的に使い回せるよう作りましょう。"
 image: "/images/components/button.jpg"
 ---
 

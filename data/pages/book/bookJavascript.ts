@@ -5,7 +5,7 @@ export const bookJavascript: BookType[] = [
     name: '1冊ですべて身につくJavaScript入門講座',
     link: '44QJKZJ',
     image: '81KbmzH9wrL._SY522_',
-    desc: '以外にWeb製作でJavaScriptでアニメーションについて書かれた書籍は少ないので、Web製作でのJavaScriptの基本を学びたい方はおすすめです！',
+    desc: '以外にWeb制作でJavaScriptでアニメーションについて書かれた書籍は少ないので、Web制作でのJavaScriptの基本を学びたい方はおすすめです！',
   },
   {
     name: '独習JavaScript 新版',
