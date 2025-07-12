@@ -56,6 +56,10 @@ export default defineNuxtConfig({
         /^(swiper|swiper-slide|swiper-container)$/.test(tag) || tag === 'baseline-status',
     },
   },
+  site: {
+    url: siteUrl,
+    name: siteTitle,
+  },
   content: {
     build: {
       markdown: {
@@ -86,8 +90,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  generate: {
+    routes: ['/'],
+  },
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'static',
     prerender: {
       autoSubfolderIndex: false,
     },
