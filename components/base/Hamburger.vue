@@ -2,7 +2,7 @@
 import { homeArchiveList } from '~/data/pages/home/homeArchiveList';
 
 const { blogs } = await useBlogContents();
-const newBlogs = computed(() => blogs.value?.slice(0, 5));
+const newBlogs = computed(() => blogs.value?.slice(0, 4));
 
 const isOpen = ref(false);
 
