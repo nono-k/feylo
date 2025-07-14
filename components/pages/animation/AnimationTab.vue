@@ -138,6 +138,11 @@ onUnmounted(() => {
     align-items: center;
     padding-block: 1.5rem 0.5rem;
   }
+  &__item-img {
+    width: 2.5rem;
+    margin-inline: auto;
+    padding-block: 1.5rem 0.5rem;
+  }
   &__item-title {
     text-align: center;
     padding: 0.5rem 0.75rem;
