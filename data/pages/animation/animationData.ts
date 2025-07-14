@@ -35,6 +35,12 @@ export const animationData: AnimationData = {
         size: '2.5rem',
       },
     },
+    {
+      title: 'マウスストーカー',
+      description: '様々なマウスストーカーの表現を紹介します。',
+      link: 'interactive/mouse-stalker',
+      image: '/images/animation/icon/mouse-stalker.svg',
+    },
   ],
   visual: [
     {
