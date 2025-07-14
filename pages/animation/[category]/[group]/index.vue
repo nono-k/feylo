@@ -29,8 +29,8 @@ const breadcrumbItems = [
 useSeoMeta({
   title: `${groupTitle} | ${siteTitle}`,
   ogTitle: `${groupTitle} | ${siteTitle}`,
-  description: `${groupTitle}の紹介します`,
-  ogDescription: `${groupTitle}の紹介します`,
+  description: `${groupTitle}のアニメーションを紹介します`,
+  ogDescription: `${groupTitle}のアニメーションを紹介します`,
   ogImage: siteImg,
 });
 </script>
