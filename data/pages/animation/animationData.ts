@@ -41,6 +41,15 @@ export const animationData: AnimationData = {
       link: 'interactive/mouse-stalker',
       image: '/images/animation/icon/mouse-stalker.svg',
     },
+    {
+      title: 'ハンバーガーメニュー',
+      description: '様々なハンバーガーメニューのアニメーションを紹介します。',
+      link: 'interactive/hamburger-menu',
+      icon: {
+        name: 'solar:hamburger-menu-bold',
+        size: '2.5rem',
+      },
+    },
   ],
   visual: [
     {

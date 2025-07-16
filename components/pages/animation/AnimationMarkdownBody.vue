@@ -62,8 +62,8 @@
   }
 
   h4 {
-    font-size: 1.15rem;
-    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: 2.5rem;
     padding-inline: 1rem;
     text-indent: -1em;
     &::before {
@@ -80,19 +80,42 @@
     }
   }
 
+  h5 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 0.25rem;
+    + p {
+      margin-top: 0.75rem;
+    }
+  }
+
   p {
     margin-top: 1.5rem;
   }
 
-  p code {
-    padding: 0.2em 0.5em;
-    margin-inline: 0.2em;
-    border-radius: 0.25rem;
-    background-color: #ececed;
-    border: 1px solid #4f576c;
-    color: #484f60;
-    font-size: 0.85rem;
-    font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
+  p, ol, ul {
+    code {
+      padding: 0.2em 0.5em;
+      margin-inline: 0.2em;
+      border-radius: 0.25rem;
+      background-color: #ececed;
+      border: 1px solid #4f576c;
+      color: #484f60;
+      font-size: 0.85rem;
+      font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
+    }
+  }
+
+  ol, ul {
+    margin-top: 1.5rem;
+    > * + * {
+      margin-top: 0.5rem;
+    }
+    li {
+      list-style: inherit;
+      margin-left: 1rem;
+    }
   }
 }
 </style>
