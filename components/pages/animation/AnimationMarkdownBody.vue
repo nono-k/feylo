@@ -90,6 +90,12 @@
     }
   }
 
+  a {
+    color: #3366cc;
+    text-decoration: underline;
+    text-underline-offset: 0.25em
+  }
+
   p {
     margin-top: 1.5rem;
   }
