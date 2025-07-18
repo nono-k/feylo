@@ -37,11 +37,14 @@ const props = withDefaults(defineProps<Props>(), {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   box-shadow: 4px 4px 0 0 var(--black);
+  > * + * {
+    margin-top: 0.5rem;
+  }
   &__title {
     font-weight: 700;
   }
   &__list {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem !important;
   }
   &__item {
     list-style: inherit;
