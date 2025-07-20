@@ -71,7 +71,7 @@
 
   h4 {
     font-size: 1.125rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     padding-inline: 1rem;
     text-indent: -1em;
     &::before {
@@ -103,9 +103,8 @@
       padding: 0.2em 0.5em;
       margin-inline: 0.2em;
       border-radius: 0.25rem;
-      background-color: #ececed !important;
-      border: 1px solid #4f576c;
-      color: #484f60 !important;
+      background-color: #f0f5f9 !important;
+      border: 1px solid #e6edf3;
       font-size: 0.85rem;
       font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
     }
@@ -113,6 +112,9 @@
 
   ol, ul {
     margin-top: 1.5rem;
+    > * + * {
+      margin-top: 0.5rem;
+    }
     li {
       list-style: inherit;
       margin-left: 1rem;

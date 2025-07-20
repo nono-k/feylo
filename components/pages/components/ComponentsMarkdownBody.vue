@@ -17,7 +17,7 @@
     padding-inline: 0rem;
   }
 
-  h2, h3 {
+  h2, h3, h4, h5, h6 {
     font-weight: 700;
     a {
       color: var(--black);
@@ -63,6 +63,16 @@
     }
   }
 
+  h4 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 0.25rem;
+    + p {
+      margin-top: 0.75rem;
+    }
+  }
+
   a {
     color: #3366cc;
     text-decoration: underline;
@@ -77,9 +87,8 @@
     padding: 0.2em 0.5em;
     margin-inline: 0.2em;
     border-radius: 0.25rem;
-    background-color: #ececed;
-    border: 1px solid #4f576c;
-    color: #484f60;
+    background-color: #f0f5f9;
+    border: 1px solid #e6edf3;
     font-size: 0.85rem;
     font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
   }
