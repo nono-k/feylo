@@ -105,9 +105,8 @@
       padding: 0.2em 0.5em;
       margin-inline: 0.2em;
       border-radius: 0.25rem;
-      background-color: #ececed;
-      border: 1px solid #4f576c;
-      color: #484f60;
+      background-color: #f0f5f9;
+      border: 1px solid #e6edf3;
       font-size: 0.85rem;
       font-family: Consolas,Menlo,Monaco,-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,monospace;
     }
