@@ -62,9 +62,7 @@ defineProps<{
     }
   }
   &__desc {
-    @include mixin.mobile {
-      font-size: 0.875rem;
-    }
+    font-size: 0.875rem;
   }
 }
 </style>
