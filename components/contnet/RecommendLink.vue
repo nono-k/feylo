@@ -56,7 +56,8 @@ const props = withDefaults(defineProps<Props>(), {
     gap: 0.5rem;
   }
   &__list {
-    margin-top: 0;
+    margin-top: 0 !important;
+    list-style: none;
     > * + * {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
@@ -72,8 +73,8 @@ const props = withDefaults(defineProps<Props>(), {
     grid-template-columns: 1fr 3fr;
     align-items: center;
     column-gap: 1rem;
-    color: var(--black);
-    text-decoration: none;
+    color: var(--black) !important;
+    text-decoration: none !important;
     border: 1px solid var(--black);
     box-shadow: 6px 6px 0 var(--black);
     transition: translate 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -94,7 +95,7 @@ const props = withDefaults(defineProps<Props>(), {
     font-weight: 700;
   }
   &__description {
-    margin-top: 0;
+    margin-top: 0 !important;
     font-size: 0.875rem;
     @include mixin.phone {
       display: none;
