@@ -220,7 +220,7 @@ Intersection Observer APIを使ったフェードインアニメーションの�
 ---
 items:
   - title: "スクロールで要素が入ったらふわっと表示（フェードイン）"
-    link: "/animation/interactive/visual/scroll/scroll-fadein"
+    link: "/animation/visual/scroll/scroll-fadein"
     image: "/images/animation/scroll-fadein.jpg"
     description: "GSAP・ScrollTriggerを使用して、スクロールで要素が入ったらふわっと表示するアニメーションの実装方法を解説します。"
 ---
