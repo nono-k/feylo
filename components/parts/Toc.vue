@@ -12,6 +12,20 @@ defineProps<{
   }[];
   color?: string;
 }>();
+
+const scrollTo = (id: string) => {
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  const headerOffset = 24;
+  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const offsetPosition = elementPosition - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+};
 </script>
 
 <template>
@@ -19,10 +33,22 @@ defineProps<{
     <div :class="['toc__title', color]"><div class="toc__icon"><Icon name="fluent-emoji-flat:card-file-box" size="2.4rem" /></div>この記事の目次</div>
     <ul class="toc__list">
       <li v-for="link in links" :key="link.id" class="toc__list-item">
-        <NuxtLink :to="`#${link.id}`" class="toc__link">{{ link.text }}</NuxtLink>
+        <NuxtLink
+          :to="`#${link.id}`"
+          class="toc__link"
+          @click.prevent="scrollTo(link.id)"
+        >
+          {{ link.text }}
+        </NuxtLink>
         <ul v-if="link.children">
           <li v-for="child in link.children" :key="child.id">
-            <NuxtLink :to="`#${child.id}`" class="toc__link">{{ child.text }}</NuxtLink>
+            <NuxtLink
+              :to="`#${child.id}`"
+              class="toc__link"
+              @click.prevent="scrollTo(child.id)"
+            >
+              {{ child.text }}
+            </NuxtLink>
           </li>
         </ul>
       </li>
