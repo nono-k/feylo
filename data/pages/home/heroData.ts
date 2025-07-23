@@ -14,7 +14,7 @@ export const heroData = [
 export const heroRightData = [
   {
     title: 'ホバーした位置で丸が大きくなるボタン',
-    link: '/animation/interactive/mousehover/mousehover-button',
+    link: '/animation/interactive/mousehover/mousehover-circle-button',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/hover-circle-button/',
   },
   {
@@ -24,7 +24,7 @@ export const heroRightData = [
   },
   {
     title: 'ホバーした位置で丸が大きくなるボタン',
-    link: '/animation/interactive/mousehover/mousehover-button',
+    link: '/animation/interactive/mousehover/mousehover-circle-button',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/hover-circle-button/',
   },
   {
