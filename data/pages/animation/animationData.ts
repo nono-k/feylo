@@ -61,5 +61,14 @@ export const animationData: AnimationData = {
         size: '2.5rem',
       },
     },
+    {
+      title: 'ギャラリー',
+      description: '画像やカードコンポーネントがgridなどで並べられて利用するアニメーションを紹介します。',
+      link: 'visual/gallery',
+      icon: {
+        name: 'circum:grid-4-2',
+        size: '2.5rem',
+      },
+    },
   ],
 };

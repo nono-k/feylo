@@ -2,12 +2,33 @@
 import type { AnimationCategoryKey } from '~/data/pages/animation/animationData';
 import { animationData } from '~/data/pages/animation/animationData';
 
+const route = useRoute();
+const router = useRouter();
+
 const categoryKeys: AnimationCategoryKey[] = ['interactive', 'visual'];
 const tabLabels: Record<AnimationCategoryKey, string> = {
   interactive: '操作に反応する動き',
   visual: '魅せるアニメーション',
 };
-const currentTab = ref<AnimationCategoryKey>('interactive');
+
+const getInitialTab = (): AnimationCategoryKey => {
+  const tab = route.query.tab;
+  if (typeof tab === 'string' && categoryKeys.includes(tab as AnimationCategoryKey)) {
+    return tab as AnimationCategoryKey;
+  }
+  return 'interactive';
+};
+
+const currentTab = ref<AnimationCategoryKey>(getInitialTab());
+
+watch(currentTab, (newTab) => {
+  router.replace({
+    query: {
+      ...route.query,
+      tab: newTab,
+    },
+  });
+});
 
 const isSticky = ref(false);
 const tabWrap = ref<HTMLElement | null>(null);
