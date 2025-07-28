@@ -77,7 +77,7 @@ useSeoMeta({
         <SnsShare :title="title" :slug="route.path" />
       </div>
 
-      <div class="book__aside">
+      <div class="book-details__aside">
         <BlogSide />
       </div>
     </div>
