@@ -77,7 +77,10 @@ defineProps<{
     max-width: 880px;
     margin-inline: auto;
     padding-inline: 40px;
+    font-size: 1.05rem;
+    line-height: 1.8;
     @include mixin.mobile {
+      font-size: 1rem;
       padding-inline: 0px;
     }
   }
