@@ -80,7 +80,7 @@ useSeoMeta({
   margin-block: 3rem 6rem;
   &__iframe {
     width: 100%;
-    height: 500px;
+    height: 580px;
     border: 2px solid var(--black);
     border-radius: 0.5rem;
     @include mixin.phone {
