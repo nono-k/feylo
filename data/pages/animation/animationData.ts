@@ -63,7 +63,7 @@ export const animationData: AnimationData = {
     },
     {
       title: 'ギャラリー',
-      description: '画像やカードコンポーネントがgridなどで並べられて利用するアニメーションを紹介します。',
+      description: '画像やカードがgridなどで並べられたコンポーネントで利用するアニメーションを紹介します。',
       link: 'visual/gallery',
       icon: {
         name: 'circum:grid-4-2',
