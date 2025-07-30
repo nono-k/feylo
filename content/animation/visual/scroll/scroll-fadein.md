@@ -65,7 +65,16 @@ CSSに関しては特に重要ではないので、ここでは割愛します�
 ## JavaScript
 
 最後にJavaScriptを実装していきます。
-クラス構文で記述していきます。
+まずは、GSAPとScrollTriggerをインポートし、ScrollTriggerを登録します。
+
+```js [JavaScript]
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+```
+
+続いて、フェードインアニメーションさせるInviewクラスを作成します。
+JavaScriptのクラス構文で記述していきます。
 
 ```js [JavaScript]
 class Inview {
@@ -104,6 +113,8 @@ class Inview {
 
 const inview = new Inview();
 ```
+
+それでは、解説していきます。
 
 ### switch文で分岐させる
 
