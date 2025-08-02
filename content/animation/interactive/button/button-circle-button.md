@@ -3,8 +3,8 @@ title: "ホバーする位置で丸が大きくなるボタン"
 description: "ホバーする位置に応じて丸が拡大するボタンの作り方を解説します。通常のホバー時にボタンの背景色が変わるのと違い、ホバーした位置から丸が拡大して色が変わるので、リンクなどに使用するとよりインタラクティブなボタンになるでしょう。このサイトでもTopページなどに使用しています。"
 order: 1
 update: 2025-07-01
-group: "マウスホバー"
-image: "/images/animation/mousehover-circle-button.jpg"
+group: "ボタン"
+image: "/images/animation/button-circle-button.jpg"
 demoUrl: "https://nono-k.github.io/feylo-demo/demo/animation/hover-circle-button/"
 demoCode: "https://github.com/nono-k/feylo-demo/blob/main/src/pages/demo/animation/hover-circle-button.astro"
 pointList:
