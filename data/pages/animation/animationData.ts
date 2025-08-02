@@ -18,24 +18,6 @@ type AnimationData = Record<AnimationCategoryKey, AnimationItem[]>;
 export const animationData: AnimationData = {
   interactive: [
     {
-      title: 'マウスホバー',
-      description: 'マウスホバーのアニメーションを紹介します。',
-      link: 'interactive/mousehover',
-      icon: {
-        name: 'fluent:cursor-hover-16-regular',
-        size: '2.5rem',
-      },
-    },
-    {
-      title: 'マウスクリック',
-      description: 'マウスクリックのアニメーションを紹介します。',
-      link: 'interactive/mouseclick',
-      icon: {
-        name: 'mynaui:click',
-        size: '2.5rem',
-      },
-    },
-    {
       title: 'マウスストーカー',
       description: '様々なマウスストーカーの表現を紹介します。',
       link: 'interactive/mouse-stalker',
@@ -49,6 +31,27 @@ export const animationData: AnimationData = {
         name: 'solar:hamburger-menu-bold',
         size: '2.5rem',
       },
+    },
+    {
+      title: 'カード',
+      description: 'カードコンポーネントのアニメーションを紹介します。',
+      link: 'interactive/card',
+      icon: {
+        name: 'fluent-mdl2:contact-card',
+        size: '2.5rem',
+      },
+    },
+    {
+      title: 'ボタン',
+      description: 'ボタンのアニメーションを紹介します。',
+      link: 'interactive/button',
+      image: '/images/animation/icon/button.svg',
+    },
+    {
+      title: 'タブ',
+      description: 'タブのアニメーションを紹介します。',
+      link: 'interactive/tab',
+      image: '/images/animation/icon/tab.svg',
     },
   ],
   visual: [

@@ -160,7 +160,7 @@ onUnmounted(() => {
     padding-block: 1.5rem 0.5rem;
   }
   &__item-img {
-    width: 2.5rem;
+    // width: 2.5rem;
     margin-inline: auto;
     padding-block: 1.5rem 0.5rem;
   }

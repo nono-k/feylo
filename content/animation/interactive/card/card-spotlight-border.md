@@ -1,10 +1,10 @@
 ---
 title: "スポットライトのようにボーダーがマウスに追従するカードコンポーネント"
 description: "最近、よく見かけるカードコンポーネントが並べられていて、ホバーするとスポットライトのようにボーダーがマウスに追従するアニメーションを解説します。実装ではmask-imageを利用して実現しています。"
-order: 3
+order: 2
 update: 2025-07-11
-group: "マウスホバー"
-image: "/images/animation/hover-spotlight-border.jpg"
+group: "カード"
+image: "/images/animation/card-spotlight-border.jpg"
 demoUrl: "https://nono-k.github.io/feylo-demo/demo/animation/hover-spotlight-border/"
 demoCode: "https://github.com/nono-k/feylo-demo/blob/main/src/pages/demo/animation/hover-spotlight-border.astro"
 pointList:

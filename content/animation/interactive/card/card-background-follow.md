@@ -1,10 +1,10 @@
 ---
 title: "背景がホバーで追従するカードコンポーネント"
 description: "Anchor Positioningを使用してJavaScriptを使わずにCSSのみで背景がホバーで追従させる作り方を解説します。カードコンポーネントなどで使用するとよりインタラクティブなホバーエフェクトになるでしょう。"
-order: 2
+order: 1
 update: 2025-07-03
-group: "マウスホバー"
-image: "/images/animation/hover-background-follow.jpg"
+group: "カード"
+image: "/images/animation/card-background-follow.jpg"
 demoUrl: "https://nono-k.github.io/feylo-demo/demo/animation/hover-background-follow/"
 demoCode: "https://github.com/nono-k/feylo-demo/blob/main/src/pages/demo/animation/hover-background-follow.astro"
 pointList:

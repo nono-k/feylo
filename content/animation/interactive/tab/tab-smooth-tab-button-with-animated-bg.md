@@ -3,8 +3,8 @@ title: "マウスクリックで背景がぬるっと動くタブ切り替えボ
 description: "マウスクリックで背景がぬるっと動くタブ切り替えボタンの作り方を紹介します。タブ切り替えのボタンに使用することで、ユーザー体験を高めるタブ切り替えになるでしょう。"
 order: 1
 update: 2025-07-01
-group: "マウスクリック"
-image: "/images/animation/mouseclick-smooth-tab-button-with-animated-bg.jpg"
+group: "タブ"
+image: "/images/animation/tab-smooth-tab-button-with-animated-bg.jpg"
 demoUrl: "https://nono-k.github.io/feylo-demo/demo/animation/mouseclick-smooth-tab-button-with-animated-bg/"
 demoCode: "https://github.com/nono-k/feylo-demo/blob/main/src/pages/demo/animation/mouseclick-smooth-tab-button-with-animated-bg.astro"
 pointList:
