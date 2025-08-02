@@ -14,22 +14,22 @@ export const heroData = [
 export const heroRightData = [
   {
     title: 'ホバーした位置で丸が大きくなるボタン',
-    link: '/animation/interactive/mousehover/mousehover-circle-button',
+    link: '/animation/interactive/button/button-circle-button',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/hover-circle-button/',
   },
   {
     title: 'マウスクリックで背景がぬるっと動くタブ切り替えボタン',
-    link: '/animation/interactive/mouseclick/mouseclick-smooth-tab-button-with-animated-bg',
+    link: '/animation/interactive/tab/tab-smooth-tab-button-with-animated-bg',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/mouseclick-smooth-tab-button-with-animated-bg/',
   },
   {
     title: 'ホバーした位置で丸が大きくなるボタン',
-    link: '/animation/interactive/mousehover/mousehover-circle-button',
+    link: '/animation/interactive/button/button-circle-button',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/hover-circle-button/',
   },
   {
     title: 'マウスクリックで背景がぬるっと動くタブ切り替えボタン',
-    link: '/animation/interactive/mouseclick/mouseclick-smooth-tab-button-with-animated-bg',
+    link: '/animation/interactive/tab/tab-smooth-tab-button-with-animated-bg',
     src: 'https://nono-k.github.io/feylo-demo/demo/animation/mouseclick-smooth-tab-button-with-animated-bg/',
   },
 ];
