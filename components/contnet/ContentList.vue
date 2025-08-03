@@ -35,12 +35,13 @@ const props = withDefaults(defineProps<Props>(), {
 .content-list {
   margin-top: 1.5rem;
   padding: 1rem 1.5rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
   box-shadow: 4px 4px 0 0 var(--black);
   > * + * {
     margin-top: 0.5rem;
   }
   &__title {
+    font-size: 1.125rem;
     font-weight: 700;
   }
   &__list {
