@@ -136,9 +136,44 @@ const tag = `h${props.level || 2}`;
 
 https://nuxt.com/modules/marquee
 
+### @nuxtjs/cloudinary
+
+このサイトでは、記事内の画像をCloudinaryで管理しています。画像の場合は、`CldImage`コンポーネント、動画の場合は`CldVideoPlayer`コンポーネントを使用しています。
+
+使用するには、`.env`ファイルに`CLOUDINARY_CLOUD_NAME`を設定する必要があります。
+
+```bash [.env]
+CLOUDINARY_CLOUD_NAME=<YOUR_CLOUDINARY_CLOUD_NAME>
+```
+
+Markdown内では自前の画像も使っているので、条件分岐で分けています。このサイトの画像についての実装は[こちら](https://github.com/nono-k/feylo/blob/main/components/contnet/ProseImg.vue)をご覧ください。
+
+https://nuxt.com/modules/cloudinary
+
+### @nuxt/scripts
+
+Nuxt Scriptsは、サードパーティスクリプトの最適化をサポートするモジュールになります。このブログではGoogle Analyticsを導入しているので使用しています。Nuxt ScriptsでGoogle Analyticsを設定するには、`nuxt.config.ts`に下記のように記述すればよいでしょう。
+
+```js [nuxt.config.ts]
+export default defineNuxtConfig({
+  // ...
+  $production: {
+    scripts: {
+      registry: {
+        googleAnalytics: {
+          id: 'YOUR-ID',
+        },
+      },
+    },
+  },
+})
+```
+
+https://scripts.nuxt.com/
+
 ## まとめ
 
 Nuxtプロジェクトで便利に開発できるNuxtモジュールを紹介しました。
-Nuxtモジュールは、公式サイトから探していけば、それっぽいものが見つかると思います。
+Nuxtモジュールは、公式サイトから探していけば、目的のものが見つかるかと思います。
 
 ぜひみなさんも利用してみてください！
