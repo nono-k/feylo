@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const { blogs } = await useBlogContents();
+const newBlogs = computed(() => blogs.value?.slice(0, 8));
 </script>
 
 <template>
   <div class="blog-list__wrap container">
     <ul class="blog-list">
-      <li v-for="blog in blogs" :key="blog.title">
+      <li v-for="blog in newBlogs" :key="blog.title">
         <CardTimeTop :data="blog" />
       </li>
     </ul>
