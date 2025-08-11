@@ -53,6 +53,15 @@ export const animationData: AnimationData = {
       link: 'interactive/tab',
       image: '/images/animation/icon/tab.svg',
     },
+    {
+      title: 'スライダー',
+      description: 'Swiperを利用したスライダーのアニメーションを紹介します。',
+      link: 'interactive/slider',
+      icon: {
+        name: 'streamline-freehand:ui-browser-slider',
+        size: '2.5rem',
+      },
+    },
   ],
   visual: [
     {
