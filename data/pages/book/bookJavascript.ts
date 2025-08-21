@@ -14,6 +14,12 @@ export const bookJavascript: BookType[] = [
     desc: 'JavaScriptの独習シリーズです。JavaScriptの詳しい言語仕様を書籍で体系的に学びたい人におすすめの1冊になります。教科書的に手元に置いておくと良いでしょう。',
   },
   {
+    name: 'JavaScript コードレシピ集',
+    link: '4mxsFun',
+    image: '71+C+rf5o8L._SY522_',
+    desc: '本書はWeb制作の現場で使われる定番のJavaScriptコードを、目的別に278個掲載しています。「JavaScriptでこの処理はどう書くのだろう」と思ったら、すぐに見つけられるので初学者の方が手元に置いておくと良いでしょう。',
+  },
+  {
     name: '作って学ぶ　Next.js/React　Webサイト構築',
     link: '3GAvcEl',
     image: '71+GR1uVBDL._SY522_',
