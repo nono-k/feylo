@@ -79,9 +79,9 @@ import { BlogTags } from '~/data/blogTags';
         </li>
       </ul>
       <div class="footer__bottom-logo ff-zilla-slab-700-italic">
-        <NuxtLink to="/">Felylo</NuxtLink>
+        <NuxtLink to="/">Feylo</NuxtLink>
       </div>
-      <small class="footer__bottom-copy">Copyright© Felylo All Rights Reserved.</small>
+      <small class="footer__bottom-copy">Copyright© Feylo All Rights Reserved.</small>
     </div></footer>
 </template>
 
