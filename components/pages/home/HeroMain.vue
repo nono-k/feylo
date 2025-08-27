@@ -28,7 +28,7 @@ register();
         <swiper-slide v-for="item in heroData" :key="item.title" class="hero__main-slide">
           <NuxtLink :to="item.link" class="hero__main-link">
             <div class="hero__main-img">
-              <img :src="item.img" alt="">
+              <img :src="item.img" alt="" width="580" height="530">
             </div>
             <h2 class="hero__main-title">
               <div v-for="char in item.title" :key="char">
