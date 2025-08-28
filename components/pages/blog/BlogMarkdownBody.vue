@@ -88,6 +88,14 @@
     }
   }
 
+  h5 {
+    font-size: 1.125rem;
+    margin-top: 2.5rem;
+    + p {
+      margin-top: 0.5rem;
+    }
+  }
+
   a {
     color: #3366cc;
     text-decoration: underline;
