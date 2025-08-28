@@ -9,6 +9,7 @@ export const BlogTags: BlogTags[] = [
   { name: 'CSS', slug: 'css', color: 'var(--sky-blue)' },
   { name: 'JavaScript', slug: 'javascript', color: 'var(--yellow)' },
   { name: 'GSAP', slug: 'gsap', color: 'var(--green)' },
-  { name: 'VSCode', slug: 'vs-code', color: 'var(--blue)' },
+  { name: 'Swiper', slug: 'swiper', color: 'var(--blue)' },
   { name: 'Nuxt.js', slug: 'nuxtjs', color: 'var(--green)' },
+  { name: 'VSCode', slug: 'vs-code', color: 'var(--blue)' },
 ];
