@@ -7,8 +7,8 @@ tags:
   - "Swiper"
 image: "/images/blog/no-image-yellow.jpg"
 summaryList:
-  - "パンくずリストでの長いテキストを「...」で省略する方法"
-  - "widthとmax-widthを使用していない場合でも適用できる方法"
+  - "dialog要素を使用したモーダルの実装方法"
+  - "Swiperとモーダルの組み合わせ方法"
 ---
 
 ## はじめに
