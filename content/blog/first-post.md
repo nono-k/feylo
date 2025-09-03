@@ -60,9 +60,9 @@ https://munus.dev/blog/web-media-feylo
 Web制作でよく使うコンポーネントをまとめていきます。
 おそらく、コピペですぐに使えるような汎用的なコンポーネントを掲載していきます。
 
-### Webデザインアニメーション帳
+### Webデザインアニメーション集
 
-![Webデザインアニメーション帳ページ](https://res.cloudinary.com/dy8ftemi0/image/upload/v1751343017/first-post-03_vy7zdc.jpg)
+![Webデザインアニメーション集ページ](https://res.cloudinary.com/dy8ftemi0/image/upload/v1751343017/first-post-03_vy7zdc.jpg)
 
 Web制作でよく使うアニメーションのサンプルをまとめていきます。
 初学者にとっては、アニメーションのコードを読むのは難しいと思いますので、分かりやすいようにサンプルデモ付きで掲載していきます。

@@ -14,7 +14,7 @@ export const homeArchiveList = [
   //   color: 'var(--sky-blue)',
   // },
   {
-    title: 'Webデザインアニメーション帳',
+    title: 'Webデザインアニメーション集',
     link: '/animation',
     desc: 'CSS,JSを使ってリッチな表現になるアニメーションをまとめてみました。',
     image: '/images/common/archive-animation.jpg',

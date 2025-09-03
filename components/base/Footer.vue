@@ -52,7 +52,7 @@ import { BlogTags } from '~/data/blogTags';
           </li> -->
           <li class="footer__content-item">
             <NuxtLink to="/animation" class="footer__content-link" style="background: var(--orange);">
-              <span class="footer__content-text">Webデザインアニメーション帳</span>
+              <span class="footer__content-text">Webデザインアニメーション集</span>
             </NuxtLink>
           </li>
           <li class="footer__content-item">
