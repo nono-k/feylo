@@ -164,6 +164,21 @@ active: css
 
 パンくずリストの2個目以上のリストの左側に「＞」が配置するようにするので、`.breadcrumb__item`に`nth-child(n+2)`を適用して擬似要素として「＞」を配置します。
 
+## パンくずリストのテキストが長い場合
+
+パンくずリストのテキストが長い場合は、折り返すか「...」で省略するかをしましょう。
+`text-overflow: ellipsis`を使用して、長いテキストを省略する方法を下記の記事を参照してください。
+
+::recommend-link
+---
+items:
+  - title: "パンくずリストで長いテキストを「...」で省略する方法"
+    link: "/blog/bread-text-overflow-ellipsis"
+    image: "/images/blog/no-image-sky-blue.jpg"
+    description: "前回の記事で、CSSのtext-overflow: ellipsisを使って長いテキストを省略する方法を紹介しました。しかし、パンくずリストで使用する場合にハマりポイントがあるので今回はパンくずリストにも正しく適用されるようにする方法を解説します。"
+---
+::
+
 ## 参考サイト
 
 - [パンくずリスト（BreadcrumbList）の構造化データ - Google for Developers](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb?hl=ja)
