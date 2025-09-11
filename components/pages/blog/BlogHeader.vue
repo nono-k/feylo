@@ -104,7 +104,8 @@ defineProps<{
   &__tag-link {
     font-size: 0.75rem;
     display: inline-block;
-    padding: 0.2rem 0.75rem;
+    padding: 0.25rem 0.75rem 0.35rem;
+    line-height: 1;
     border: 1px solid var(--black);
     border-radius: 1rem;
   }
