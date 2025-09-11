@@ -5,7 +5,7 @@ date: 2025-08-29
 tags: 
   - "JavaScript"
   - "Swiper"
-image: "/images/blog/no-image-yellow.jpg"
+image: "/images/blog/modal-with-swiper-slider.jpg"
 summaryList:
   - "dialog要素を使用したモーダルの実装方法"
   - "Swiperとモーダルの組み合わせ方法"
