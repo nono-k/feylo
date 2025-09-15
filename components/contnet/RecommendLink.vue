@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
       <li v-for="item in props.items" :key="item.title" class="recommend-link__item">
         <NuxtLink :to="item.link" class="recommend-link__link">
           <div class="recommend-link__image">
-            <img :src="item.image" alt="" />
+            <img :src="item.image" :alt="item.title" width="180" height="180" />
           </div>
           <div class="recommend-link__body">
             <div class="recommend-link__title">{{ item.title }}</div>
@@ -70,7 +70,7 @@ const props = withDefaults(defineProps<Props>(), {
   }
   &__link {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3.5fr;
     align-items: center;
     column-gap: 1rem;
     color: var(--black) !important;
