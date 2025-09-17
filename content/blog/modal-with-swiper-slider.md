@@ -15,6 +15,18 @@ summaryList:
 
 この記事では、モーダルの中にSwiperで実装したスライダーがある場合の実装方法を解説します。モーダルは`dialog`要素を使用して実装します。
 
+`dialog`要素を使用したモーダルの実装の基本は下記のページを参照ください。
+
+::recommend-link
+---
+items:
+  - title: "Modal"
+    link: "/components/modal"
+    image: "/images/components/modal.jpg"
+    description: "Web制作でモーダルを実装する機会は多いかと思います。この記事ではdialog要素でモーダルを実装する方法を解説します。"
+---
+::
+
 ## バージョン情報
 
 この記事で使用しているSwiperのライブラリのバージョンは以下の通りです。

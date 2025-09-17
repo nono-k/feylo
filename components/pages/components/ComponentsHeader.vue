@@ -16,7 +16,7 @@ defineProps<{
     </div>
     <div class="header__right">
       <div class="header__img">
-        <img :src="data.image" :alt="data.title" />
+        <img :src="data.image" :alt="data.title" width="330" height="220" />
       </div>
     </div>
   </header>

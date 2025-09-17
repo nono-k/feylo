@@ -18,6 +18,7 @@ const props = defineProps<{
 <style scoped lang="scss">
 baseline-status {
   margin-block: 2rem;
+  margin-inline: auto;
   padding-top: 1rem;
   padding-inline: 1.5rem;
 }
