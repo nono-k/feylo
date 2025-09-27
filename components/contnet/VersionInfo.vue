@@ -67,6 +67,8 @@ const props = defineProps<{
     border-radius: 1rem;
     font-size: 0.875rem;
     font-weight: 700;
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 </style>
