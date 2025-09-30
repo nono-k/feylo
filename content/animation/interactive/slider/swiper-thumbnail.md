@@ -141,7 +141,6 @@ const mainSwiper = new Swiper(mainSwiperEl, {
 const thumbsSwiper = new Swiper(thumbsSwiperEl, { 
   slidesPerView: 3,
   freeMode: true,
-  watchSlidesProgress: true,
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
@@ -149,7 +148,7 @@ const thumbsSwiper = new Swiper(thumbsSwiperEl, {
 })
 ```
 
-サムネイルのスライダーは3枚表示させるようにするため、`slidesPerView`を3に設定します。`freeMode`を`true`にすることで、サムネイルのスライダーを自由にスクロールできるようにします。また、`watchSlidesProgress`を`true`にすることで、サムネイルのスライダーの現在の位置を監視し、メインのスライダーと連動させることが可能になります。
+サムネイルのスライダーは3枚表示させるようにするため、`slidesPerView`を3に設定します。`freeMode`を`true`にすることで、サムネイルのスライダーを自由にスクロールできるようにします。
 
 スクロールバーを機能させるためには、`scrollbar`オプションを使用し、`el`にスクロールバーの要素(`.swiper-scrollbar`)を指定します。`draggable`を`true`にすることで、スクロールバーをドラッグしてスクロールできるようにします。
 

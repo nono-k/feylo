@@ -1,7 +1,7 @@
 ---
 title: "Swiper × GSAPで作る円形で切り替わるスライダーの実装方法"
 description: "スライダーライブラリのSwiperとGSAPを使ってclip-pathのcircleを使用して、スライド切り替わり時に円形で切り替わるスライダーの実装方法を解説します。"
-order: 3
+order: 4
 update: 2025-09-27
 group: "スライダー"
 image: "/images/animation/swiper-clip-path-circle.jpg"
