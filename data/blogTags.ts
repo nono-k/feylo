@@ -12,4 +12,5 @@ export const BlogTags: BlogTags[] = [
   { name: 'Swiper', slug: 'swiper', color: 'var(--blue)' },
   { name: 'Nuxt.js', slug: 'nuxtjs', color: 'var(--green)' },
   { name: 'VSCode', slug: 'vs-code', color: 'var(--blue)' },
+  { name: 'アクセシビリティ', slug: 'accessibility', color: 'var(--accent-orange)' },
 ];
