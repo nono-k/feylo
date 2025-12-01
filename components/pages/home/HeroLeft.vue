@@ -45,7 +45,7 @@
     </div>
     <div class="hero__left-middle">
       <div class="hero__left-middle-title ff-zen-kaku-gothic-700">運用中のサイト🚀</div>
-      <a href="https://hypb.dev" class="hero__left-middle-img" target="_blank">
+      <a href="https://hypb.dev" class="hero__left-middle-img" target="_blank" rel="noreferrer">
         <img src="/images/common/hypb.png" alt="hypb" width="250" height="132" />
       </a>
     </div>

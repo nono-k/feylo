@@ -29,10 +29,10 @@ useSeoMeta({
           <dt class="profile__dt">{{ item.title }}</dt>
           <dd v-if="item.site" class="profile__sites">
             <div v-for="site in item.site" :key="site.title" class="profile__card">
-              <a :href="site.url" target="_blank" class="profile__img">
+              <a :href="site.url" target="_blank" class="profile__img" rel="noreferrer">
                 <img :src="site.image" :alt="site.title" />
               </a>
-              <a :href="site.url" target="_blank" class="profile__link">({{ site.title }})</a>
+              <a :href="site.url" target="_blank" class="profile__link" rel="noreferrer">({{ site.title }})</a>
             </div>
           </dd>
           <dd v-else class="profile__dd" v-html="item.text" />
