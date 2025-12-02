@@ -9,6 +9,11 @@ export const heroData = [
     link: '/blog/vs-code-snippets',
     img: '/images/blog/vs-code-snippets.jpg',
   },
+  {
+    title: ['WebGLで', '三角形を描画する'],
+    link: '/blog/webgl-triangle',
+    img: '/images/blog/webgl-triangle.jpg',
+  },
 ];
 
 export const heroRightData = [

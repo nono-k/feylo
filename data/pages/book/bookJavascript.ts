@@ -25,4 +25,10 @@ export const bookJavascript: BookType[] = [
     image: '71+GR1uVBDL._SY522_',
     desc: '本書はJavaScriptのフレームワークであるNext.jsとmicroCMSのJamstackの構成でブログを作る方法を実践できます。Reactなどのフレームワークを使ったことがない人でも分かりやすく書かれているので、この書籍でモダンな開発環境について学んでみてはいかがでしょうか。',
   },
+  {
+    name: '初めてのWebGL 2 第2版 ―JavaScriptで開発するリアルタイム3Dアプリケーション',
+    link: '3My8aAw',
+    image: '613b1YYKLfS._SY522_',
+    desc: '本書はライブラリを使用せず、WebGL2の基礎を学べる貴重な1冊になります。本書を順番に読み、実際にサンプルコードを書いていけば、簡易的なWebGLライブラリになるので、Three.jsは触ったことがあるけで、中身が気になるという方におすすめの本になります。',
+  },
 ];
