@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
     >
       {{ props.title }}
     </div>
-    <p class="note__text">{{ props.text }}</p>
+    <p class="note__text" v-html="props.text"></p>
   </div>
 </template>
 
