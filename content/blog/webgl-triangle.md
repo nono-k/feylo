@@ -779,3 +779,15 @@ href: https://nono-k.github.io/webgl-study-note/webgl/triangle/
 WebGLの基礎を学ぶために、まずは三角形を描画してみました。素のWebGLでは煩雑な処理が多くなるので、Three.jsやOGLを参考にして、コアな部分をクラスに分けて説明していきました。
 
 少しでもThree.jsなどのWebGLライブラリが、どのようになっているのか理解できたら幸いです。今後はこのシリーズを通して、オレオレWebGLライブラリを育てていきたいと思います！
+
+次回は、MVP行列の理解と、一つの頂点バッファで複数の三角形を描画する方法について解説します。
+
+::recommend-link
+---
+items:
+  - title: "【WebGL】MVP行列の理解と複数の三角形を描画する"
+    link: "/blog/webgl-multiple-triangle/"
+    image: "/images/blog/webgl-multiple-triangle.jpg"
+    description: "今回は、WebGLやCGでの3次元描画をする上で必要な知識となるMVP行列を紹介します。そしてCameraクラスを作成し、一つの頂点バッファでサムネの画像にあるような複数の三角形を描画する方法まで解説します。"
+---
+::
