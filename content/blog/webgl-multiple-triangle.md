@@ -700,4 +700,14 @@ void main() {
 
 一つの頂点バッファで複数の三角形を描画するために、MVP行列の紹介と諸々の実装をしてきました。記事内だと詳しく解説できてない部分もあるので、実際にコードを見ながら理解してみてください。
 
-次回は、WebGLで立方体を描画して、作成したCameraクラスで操作してみたいと思います。
+次回は、WebGLで平面ジオメトリを作成して描画する方法を解説していきます。
+
+::recommend-link
+---
+items:
+  - title: "【WebGL】WebGLで平面(Plane)ジオメトリを描画する方法"
+    link: "/blog/webgl-plane-geometry/"
+    image: "/images/blog/webgl-plane-geometry.jpg"
+    description: "今回は、Three.jsでいうPlaneGeometry(平面)の作成をWebGLで行っていきます。widthとheightを設定できるのはもちろん、分割数も設定できるようにしていきます。"
+---
+::
