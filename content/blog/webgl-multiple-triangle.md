@@ -705,7 +705,7 @@ void main() {
 ::recommend-link
 ---
 items:
-  - title: "【WebGL】WebGLで平面(Plane)ジオメトリを描画する方法"
+  - title: "WebGLで平面(Plane)ジオメトリを作成する方法"
     link: "/blog/webgl-plane-geometry/"
     image: "/images/blog/webgl-plane-geometry.jpg"
     description: "今回は、Three.jsでいうPlaneGeometry(平面)の作成をWebGLで行っていきます。widthとheightを設定できるのはもちろん、分割数も設定できるようにしていきます。"
