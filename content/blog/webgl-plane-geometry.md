@@ -1,5 +1,5 @@
 ---
-title: "【WebGL】WebGLで平面(Plane)ジオメトリを描画する方法"
+title: "WebGLで平面(Plane)ジオメトリを作成する方法"
 description: "今回は、Three.jsでいうPlaneGeometry(平面)の作成をWebGLで行っていきます。widthとheightを設定できるのはもちろん、分割数も設定できるようにしていきます。"
 date: 2026-05-22
 tags: 
@@ -162,7 +162,7 @@ let index = numIndices > 65535 ? new Uint32Array(numIndices) : new Uint16Array(n
 これらのBufferを使用して、頂点座標、uv、インデックスを計算する`buildPlane`関数を作成していきましょう。
 
 ```ts [buildPlane]
-Plane.buildPlane({ position, uv, index, width, height, depth: 0, wSegs, hSegs });
+Plane.buildPlane(position, uv, index, width, height, 0, wSegs, hSegs);
 ```
 
 ### 頂点座標、uv、インデックスの計算
@@ -170,31 +170,41 @@ Plane.buildPlane({ position, uv, index, width, height, depth: 0, wSegs, hSegs })
 分割数も考慮するので、頂点座標、uv、インデックスの計算は少し複雑になります。`buildPlane`関数の全コードは次のようになります。
 
 ```ts [buildPlane]
-static buildPlane(options: BuildPlaneOptions) {
-  const { position, uv, index, width, height, depth, wSegs, hSegs } = options;
-  const u = 0;
-  const v = 1;
-  const w = 2;
-  const uDir = 1;
-  const vDir = 1;
-  let i = 0;
+static buildPlane(
+  position: Float32Array,
+  uv: Float32Array,
+  index: Uint32Array | Uint16Array,
+  width: number,
+  height: number,
+  depth: number,
+  wSegs: number,
+  hSegs: number,
+  u = 0,
+  v = 1,
+  w = 2,
+  uDir = 1,
+  vDir = -1,
+  i = 0,
+  ii = 0,
+) {
   const io = i;
-  let ii = 0;
+  let idx = i;
+  let idx2 = ii;
 
   const segW = width / wSegs;
   const segH = height / hSegs;
 
   for (let iy = 0; iy <= hSegs; iy++) {
     const y = iy * segH - height / 2;
-    for (let ix = 0; ix <= wSegs; ix++, i++) {
+    for (let ix = 0; ix <= wSegs; ix++, idx++) {
       const x = ix * segW - width / 2;
 
-      position[i * 3 + u] = x * uDir;
-      position[i * 3 + v] = y * vDir;
-      position[i * 3 + w] = depth / 2;
+      position[idx * 3 + u] = x * uDir;
+      position[idx * 3 + v] = y * vDir;
+      position[idx * 3 + w] = depth / 2;
 
-      uv[i * 2] = ix / wSegs;
-      uv[i * 2 + 1] = 1 - iy / hSegs;
+      uv[idx * 2] = ix / wSegs;
+      uv[idx * 2 + 1] = 1 - iy / hSegs;
 
       if (iy === hSegs || ix === wSegs) continue;
 
@@ -203,14 +213,14 @@ static buildPlane(options: BuildPlaneOptions) {
       const c = io + ix + (iy + 1) * (wSegs + 1) + 1;
       const d = io + ix + iy * (wSegs + 1) + 1;
 
-      index[ii * 6] = a;
-      index[ii * 6 + 1] = b;
-      index[ii * 6 + 2] = d;
-      index[ii * 6 + 3] = b;
-      index[ii * 6 + 4] = c;
-      index[ii * 6 + 5] = d;
+      index[idx2 * 6] = a;
+      index[idx2 * 6 + 1] = b;
+      index[idx2 * 6 + 2] = d;
+      index[idx2 * 6 + 3] = b;
+      index[idx2 * 6 + 4] = c;
+      index[idx2 * 6 + 5] = d;
 
-      ii++;
+      idx2++;
     }
   }
 }
@@ -236,15 +246,19 @@ const segH = height / hSegs;
 ```ts [頂点座標とインデックスとuvの計算]
 for (let iy = 0; iy <= hSegs; iy++) {
   const y = iy * segH - height / 2;
-  for (let ix = 0; ix <= wSegs; ix++, i++) {
+  for (let ix = 0; ix <= wSegs; ix++, idx++) {
     const x = ix * segW - width / 2;
 
-    position[i * 3 + u] = x * uDir;
-    position[i * 3 + v] = y * vDir;
-    position[i * 3 + w] = depth / 2;
+    position[idx * 3 + u] = x * uDir;
+    position[idx * 3 + v] = y * vDir;
+    position[idx * 3 + w] = depth / 2;
 
-    uv[i * 2] = ix / wSegs;
-    uv[i * 2 + 1] = 1 - iy / hSegs;
+    normal[idx * 3 + u] = 0;
+    normal[idx * 3 + v] = 0;
+    normal[idx * 3 + w] = depth >= 0 ? 1 : -1;
+
+    uv[idx * 2] = ix / wSegs;
+    uv[idx * 2 + 1] = 1 - iy / hSegs;
 
     if (iy === hSegs || ix === wSegs) continue;
 
@@ -253,14 +267,14 @@ for (let iy = 0; iy <= hSegs; iy++) {
     const c = io + ix + (iy + 1) * (wSegs + 1) + 1;
     const d = io + ix + iy * (wSegs + 1) + 1;
 
-    index[ii * 6] = a;
-    index[ii * 6 + 1] = b;
-    index[ii * 6 + 2] = d;
-    index[ii * 6 + 3] = b;
-    index[ii * 6 + 4] = c;
-    index[ii * 6 + 5] = d;
+    index[idx2 * 6] = a;
+    index[idx2 * 6 + 1] = b;
+    index[idx2 * 6 + 2] = d;
+    index[idx2 * 6 + 3] = b;
+    index[idx2 * 6 + 4] = c;
+    index[idx2 * 6 + 5] = d;
 
-    ii++;
+    idx2++;
   }
 }
 ```
@@ -274,9 +288,9 @@ widthが1で、heightが1で、widthSegmentsが1で、heightSegmentsが1の場�
 ```ts
 position = [
   -0.5, 0.5, 0,
-  0.5, -0.5, 0,
-  -0.5, 0.5, 0,
   0.5, 0.5, 0,
+  -0.5, -0.5, 0,
+  0.5, -0.5, 0,
 ];
 
 uv = [
@@ -395,3 +409,13 @@ href: https://nono-k.github.io/webgl-study-note/webgl/plane/
 今回は、WebGLで平面(Plane)ジオメトリを描画する方法を解説しました。分割数を設定できるようにすることで、より細かい平面を作成することができるようになりました。また、wireframeモードで描画する方法も解説しました。
 
 次回は、作成したPlaneクラスを使用して立方体の作成を解説していきます。
+
+::recommend-link
+---
+items:
+  - title: "WebGLで立方体(Box)ジオメトリを作成する方法"
+    link: "/blog/webgl-box-geometry/"
+    image: "/images/blog/webgl-box-geometry.jpg"
+    description: "今回は、Three.jsでいうBoxGeometry(立方体)の作成をWebGLで行っていきます。BoxGeometry同様にwidth、height、depthを設定できるのと、分割数も設定できるようにします。"
+---
+::
