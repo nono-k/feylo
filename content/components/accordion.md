@@ -164,11 +164,6 @@ css: |
     }
   }
 
-  /* デフォルトの三角形を消す */
-  summary {
-    display: block;
-  }
-
   /* safari対策でデフォルトの三角形を消す */
   summary::-webkit-details-marker {
     display: none;
@@ -256,11 +251,6 @@ css: |
     &::after {
       rotate: 90deg;
     }
-  }
-
-  /* デフォルトの三角形を消す */
-  summary {
-    display: block;
   }
 
   /* safari対策でデフォルトの三角形を消す */
