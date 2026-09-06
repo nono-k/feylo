@@ -128,5 +128,62 @@
       margin-left: 1rem;
     }
   }
+
+  details {
+    margin-top: 2rem;
+    &[open] {
+      summary {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        &::after {
+          rotate: 180deg;
+          margin-top: 0.2rem;
+        }
+      }
+    }
+    summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--black);
+      background-color: var(--black);
+      color: var(--white);
+      transition-property: background-color, color;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      @include mixin.hover {
+        background-color: var(--white);
+        color: var(--black);
+      }
+      &::after {
+        content: '▼';
+      }
+      + div {
+        padding: 1.5rem 1rem;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border: 1px solid var(--black);
+        border-top: none;
+        background: var(--hover-color);
+        @include mixin.mobile {
+          padding-inline: 2rem 1rem;
+        }
+        > * + * {
+          margin-top: 1.5rem;
+        }
+        figure {
+          margin-bottom: 0;
+        }
+        > ul {
+          margin-top: 0;
+        }
+        > .pre {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 </style>
