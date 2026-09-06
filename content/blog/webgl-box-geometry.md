@@ -17,7 +17,7 @@ summaryList:
 ::recommend-link
 ---
 items:
-  - title: "WebGLで立方体(Box)ジオメトリを作成する方法"
+  - title: "WebGLで平面(Plane)ジオメトリを作成する方法"
     link: "/blog/webgl-plane-geometry/"
     image: "/images/blog/webgl-plane-geometry.jpg"
     description: "今回は、Three.jsでいうPlaneGeometry(平面)の作成をWebGLで行っていきます。widthとheightを設定できるのはもちろん、分割数も設定できるようにしていきます。"
@@ -135,6 +135,7 @@ Bufferの作成に関しては、`Plane`と同様になりますので省略し�
 ```ts [Plane.buildPlane]
 static buildPlane(
   position: Float32Array,
+  normal: Float32Array,
   uv: Float32Array,
   index: Uint32Array | Uint16Array,
   width: number,
@@ -159,12 +160,12 @@ let i = 0;
 let ii = 0;
 
 // left
-Plane.buildPlane(position, uv, index, depth, height, width, dSegs, hSegs, 2, 1, 0, -1, -1, i, ii);
+Plane.buildPlane(position, normal, uv, index, depth, height, width, dSegs, hSegs, 2, 1, 0, -1, -1, i, ii);
 i += (dSegs + 1) * (hSegs + 1);
 ii += dSegs * hSegs;
 
 // right
-Plane.buildPlane(position, uv, index, depth, height, -width, dSegs, hSegs, 2, 1, 0, 1, -1, i, ii);
+Plane.buildPlane(position, normal, uv, index, depth, height, -width, dSegs, hSegs, 2, 1, 0, 1, -1, i, ii);
 ```
 
 leftは、YZ平面に配置されるので、横(width)をdepthにして、奥行き(depth)をwidthにしています。rightは、left面の反対側に配置されるので、横(width)を-depthにしています。
@@ -213,6 +214,7 @@ export class Box extends Geometry {
 
     Object.assign(attributes, {
       position: { size: 3, data: position },
+      normal: { size: 3, data: normal },
       uv: { size: 2, data: uv },
       index: { data: index },
       wireframe,
@@ -262,4 +264,14 @@ href: https://nono-k.github.io/webgl-study-note/webgl/box/
 
 今回は、WebGLで立方体(Box)ジオメトリを描画する方法を解説しました。前回作成した平面(Plane)ジオメトリを組み合わせて、立方体を作成していることが分かったかと思います。
 
-次回は、作成した立方体などをマウスで操作できるようにOrbitalControlsクラスの作成を解説しようと思います。
+次回は、作成した立方体や平面の法線を可視化したり、座標を確認できるヘルパー関数を作成する方法を解説しようと思います。
+
+::recommend-link
+---
+items:
+  - title: "WebGLで法線の可視化や座標確認のためのヘルパー関数を作成する"
+    link: "/blog/webgl-helper-function/"
+    image: "/images/blog/webgl-helper-function.jpg"
+    description: "今回は、Three.jsでいうViewHelperやVertexNormalsHelperに相当する、法線の可視化や座標確認のためのヘルパー関数をWebGLで作成する方法を解説します。"
+---
+::
