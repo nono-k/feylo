@@ -32,12 +32,6 @@ https://github.com/nono-k/webgl-study-note
 
 前回からの差分は[こちら](https://github.com/nono-k/webgl-study-note/commit/701f787c8a5a19410e88697d33b2d66871e36965)になります。
 
-::note
----
-text: '今回の記事で作成するPlaneクラスでは、法線ベクトルは作成しません。ライティングなどを作成する際に、法線ベクトルについて解説しようかと思います。'
----
-::
-
 ## WebGLでの平面の作成の考え方
 
 WebGLで平面を作成するには、2つの三角形で四角形を作成することになります。ここでは、分割数を1として考えてみます。
@@ -151,6 +145,7 @@ const num = wSegs * hSegs * 6;
 
 ```ts [Bufferの作成]
 const position = new Float32Array(num * 3);
+const normal = new Float32Array(num * 3);
 const uv = new Float32Array(num * 2);
 let index = numIndices > 65535 ? new Uint32Array(numIndices) : new Uint16Array(numIndices);
 ```
@@ -159,19 +154,20 @@ let index = numIndices > 65535 ? new Uint32Array(numIndices) : new Uint16Array(n
 
 また、インデックスはwireframeモードで描画する場合は、変える必要があるので、`let`で宣言しています。
 
-これらのBufferを使用して、頂点座標、uv、インデックスを計算する`buildPlane`関数を作成していきましょう。
+これらのBufferを使用して、頂点座標、法線、uv、インデックスを計算する`buildPlane`関数を作成していきましょう。
 
 ```ts [buildPlane]
-Plane.buildPlane(position, uv, index, width, height, 0, wSegs, hSegs);
+Plane.buildPlane(position, normal, uv, index, width, height, 0, wSegs, hSegs);
 ```
 
-### 頂点座標、uv、インデックスの計算
+### 頂点座標、法線、uv、インデックスの計算
 
-分割数も考慮するので、頂点座標、uv、インデックスの計算は少し複雑になります。`buildPlane`関数の全コードは次のようになります。
+分割数も考慮するので、頂点座標、法線、uv、インデックスの計算は少し複雑になります。`buildPlane`関数の全コードは次のようになります。
 
 ```ts [buildPlane]
 static buildPlane(
   position: Float32Array,
+  normal: Float32Array,
   uv: Float32Array,
   index: Uint32Array | Uint16Array,
   width: number,
@@ -202,6 +198,10 @@ static buildPlane(
       position[idx * 3 + u] = x * uDir;
       position[idx * 3 + v] = y * vDir;
       position[idx * 3 + w] = depth / 2;
+
+      normal[idx * 3 + u] = 0;
+      normal[idx * 3 + v] = 0;
+      normal[idx * 3 + w] = depth >= 0 ? 1 : -1;
 
       uv[idx * 2] = ix / wSegs;
       uv[idx * 2 + 1] = 1 - iy / hSegs;
@@ -293,6 +293,13 @@ position = [
   0.5, -0.5, 0,
 ];
 
+normal = [
+  0, 0, 1,
+  0, 0, 1,
+  0, 0, 1,
+  0, 0, 1,
+];
+
 uv = [
   0, 1,
   1, 1,
@@ -361,6 +368,7 @@ export class Plane extends Geometry {
     // ...
     Object.assign(attributes, {
       position: { size: 3, data: position },
+      normal: { size: 3, data: normal },
       uv: { size: 2, data: uv },
       index: { data: index },
       wireframe,
