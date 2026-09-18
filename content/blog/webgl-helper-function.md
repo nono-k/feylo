@@ -12,7 +12,7 @@ summaryList:
 
 ## はじめに
 
-前回は、WebGLで平面(Plane)ジオメトリを作成する方法について解説しました。
+前回は、WebGLで立方体(Box)ジオメトリを作成する方法について解説しました。
 
 ::recommend-link
 ---
@@ -872,3 +872,13 @@ href: https://nono-k.github.io/webgl-study-note/webgl/helper/
 今回は、WebGLでデバックとして使用するヘルパー関数の作成方法について解説しました。Three.jsでも同様なものがありますが、実装がどのようになっているのか参考になればと思います。
 
 次回は、WebGLで画像や動画を表示させるTextureクラスの作成方法を解説したいと思います。
+
+::recommend-link
+---
+items:
+  - title: "WebGLで画像や動画を描画するテクスチャクラスを作成する"
+    link: "/blog/webgl-image-video-texture/"
+    image: "/images/blog/webgl-image-video-texture.jpg"
+    description: "今回は、Three.jsでいうTextureに相当する、画像や動画を描画するテクスチャクラスをWebGLで作成する方法を解説します。デモサイトでは、平面に画像を、立方体に動画を貼り付けて表示しています。"
+---
+::
