@@ -538,4 +538,14 @@ scene.add(box);
 
 今回は、WebGLでの画像と動画を描画する`Texture`クラスを作成しました。これにより、画像や動画を簡単にテクスチャとして利用できるようになりました。
 
-次回は、この`Texture`クラスを使用してキューブマップの作成方法を解説したいと思います。
+次回は、この`Texture`クラスを応用したキューブ環境マッピングの作成方法を解説したいと思います。
+
+::recommend-link
+---
+items:
+  - title: "WebGLでキューブ環境マッピングを作成する"
+    link: "/blog/webgl-cube-map/"
+    image: "/images/blog/webgl-cube-map.jpg"
+    description: "今回は、Three.jsでいうCubeTextureLoaderに相当するキューブ環境マッピングをWebGLで作成する方法を解説します。実装では新たにCubeTextureクラスを作成します。デモサイトでは、立方体にキューブ環境マッピングを適用し、球体には反射マッピングを表示しています。"
+---
+::
