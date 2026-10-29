@@ -45,6 +45,10 @@ const sectionData: SectionData[] = [
   },
 ];
 
+const amazonLink = (item: BookType) => item.link.startsWith('B')
+  ? `https://link.amazon/${item.link}`
+  : `https://amzn.to/${item.link}`;
+
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
   { path: '/book', label: 'おすすめ本' },
@@ -72,7 +76,7 @@ useSeoMeta({
           <h2 class="book__section-title">{{ list.title }}</h2>
           <ul class="book__list">
             <li v-for="item in list.list" :key="item.name" class="book__item">
-              <a :href="`https://amzn.to/${item.link}`" target="_blank" class="book__link">
+              <a :href="amazonLink(item)" target="_blank" class="book__link">
                 <div class="book__img">
                   <img :src="`https://m.media-amazon.com/images/I/${item.image}.jpg`" :alt="item.name" />
                 </div>

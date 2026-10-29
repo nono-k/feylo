@@ -36,6 +36,10 @@ switch (slug) {
 
 const count = bookList.length;
 
+const amazonLink = (item: BookType) => item.link.startsWith('B')
+  ? `https://link.amazon/${item.link}`
+  : `https://amzn.to/${item.link}`;
+
 const breadcrumbItems = [
   { path: '/', label: 'HOME' },
   { path: '/book', label: 'おすすめ本' },
@@ -63,13 +67,13 @@ useSeoMeta({
         <section class="book-details__section">
           <ul class="book-details__list">
             <li v-for="item in bookList" :key="item.name" class="book-details__item">
-              <a :href="`https://amzn.to/${item.link}`" target="_blank" class="book-details__img">
+              <a :href="amazonLink(item)" target="_blank" class="book-details__img">
                 <img :src="`https://m.media-amazon.com/images/I/${item.image}.jpg`" :alt="item.name" />
               </a>
               <div class="book-details__right">
                 <h2 class="book-details__name">{{ item.name }}</h2>
                 <p class="book-details__desc">{{ item.desc }}</p>
-                <a :href="`https://amzn.to/${item.link}`" target="_blank" class="book-details__link">Amazonで詳細を見る</a>
+                <a :href="amazonLink(item)" target="_blank" class="book-details__link">Amazonで詳細を見る</a>
               </div>
             </li>
           </ul>
